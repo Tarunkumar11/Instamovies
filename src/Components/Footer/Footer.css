@@ -8,6 +8,15 @@
     font-family: cursive;
 }
 
+.footer ul{
+    margin: 0;
+    padding: 0.4em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
 .footer ul h1 {
     font-size: 2.4em;
     font-family: cursive;
@@ -27,3 +36,25 @@
 .icons a i {
     color: aqua;
 }
+
+@media screen  and (max-width:470px) {
+
+   
+
+    .footer ul {
+        width: 100%;
+    }
+
+    
+    .footer ul h1 {
+        font-size: 1.4em;
+    }
+
+    .icons {
+
+        font-size: 1em;
+        
+    }
+       
+}
+
