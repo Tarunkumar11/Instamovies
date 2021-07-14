@@ -30,17 +30,21 @@
     padding: 0
 }
 
+.Navbar-items {
+    width: 30%;
+}
 
-.navbar-bar nav {
+
+
+.Navbar-items nav {
     display: flex;
     align-items: center;
-    margin-left: 5%;        
+    justify-content: space-around; 
 }
 
 .navbar-bar nav li {
     text-align: center;
     list-style-type: none;
-    margin-right: 2.3em;
 }
 
 .navbar-bar nav li a {
@@ -60,4 +64,23 @@
 
 .navbar-bar nav li a:hover::after{
     opacity: 1;
+}
+
+@media screen  and (max-width:670px) {
+
+    .Navbar-items {
+        width: 60%;
+    }
+       
+}
+
+@media screen  and (max-width:470px) {
+
+    .Navbar-items {
+        width: 80%;
+    }
+    .navbar-bar {
+        justify-content: center;
+    }
+       
 }

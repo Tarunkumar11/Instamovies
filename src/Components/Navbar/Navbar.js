@@ -9,7 +9,9 @@ function Navbar() {
         <div className="border-rd">
             <Navbarheading />
         </div>
-        <NavbarList items={['Home', 'Watchlist','Login']} />
+        <div className="Navbar-items">
+            <NavbarList items={['Home', 'Watchlist','Login']} />
+        </div>
     </nav>
    )
 }
