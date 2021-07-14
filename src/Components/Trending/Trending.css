@@ -1,0 +1,82 @@
+.movie-card {
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(50,350px);
+    grid-gap: 20px;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #90A4AE;
+    margin-bottom: 2em;
+}
+
+.movie-card::-webkit-scrollbar {
+    width: 0.5em;
+    height: 15px;
+  }
+  
+  .movie-card::-webkit-scrollbar-track {
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px 10px #353535;
+    border: solid 3px transparent;  
+    
+  }
+  
+  .movie-card::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 8px 23px #59ea0e;
+    border: solid 5px transparent;
+  }
+  
+  .movie-card::-webkit-scrollbar:vertical {
+    display: none;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.trending-section {
+    background: black;
+    padding-bottom: 1em;
+}
+
+.trending-movies {
+    
+    margin: 0 2%
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+}
+.movie-type {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.movie-type h2{
+    font-size: 21px;
+    font-family: cursive;
+    letter-spacing: 0.2em;
+    color: white;
+}
+
+.movie-type h2::after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: aqua;
+    display: inline-block;
+}

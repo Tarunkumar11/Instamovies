@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+
+.border-rd {
+  margin: 0.25em 0.5em 0.25em 1em;
+  padding: 0.1em;
+  background: linear-gradient(81deg, #b92626, #b2f34e, #ceb713);
+  
+}

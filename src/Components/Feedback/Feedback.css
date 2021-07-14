@@ -1,0 +1,18 @@
+.feedback-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: black;
+}
+.feedback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* padding: 2%; */
+    background: black;
+    width: 100%;
+}
+/* .feedback FeedbackCard {
+    margin: 5%;
+} */
