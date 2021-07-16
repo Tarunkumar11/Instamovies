@@ -6,63 +6,70 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    background: black;
+    background: url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/dq18nCTTLpy9PmtzZI6Y2yAgdw5.jpg");
     color: white;
     font-size: 2em;
 }
 
 .primary-section {
-    width: 95%;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     padding: 1%;
+    background: linear-gradient(hsl(0 0% 0% / 1),hsl(20 0% 0% / 0.2) 20%,hsl(0 0% 0% / 1));
 }
 
 .primary-section-right {
+    width: 50%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-left: 4%;
+    
 }
 
+.content-box{
+    width: 100%;
+}
 .content-box .movie-type h2 {
     margin: 0;
     font-size: 1em;
 }
 .gener {
-    display: grid;
-    grid-template-columns: 40% auto;
-    align-items: center
-}
-
-.gener ul {
     list-style: none;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: unset;
     width: 100%;
-    margin: 0;
-    padding: 0;
-    font-size: 0.8em;
+    /* padding: 4%; */
+    font-size: 0.6em;
+    padding: 0.2em;
 }
 
-.gener ul li{
-    background: green;
+.gener li{
+    background: linear-gradient(
+45deg
+, #c7c1c1, transparent);
     width: 87%;
-    margin: 0% 2% 0% 2%;
+    margin: 0% 4% 0% 0%;
+    border: 1px solid #14d0b2;
+    border-radius: 0.2em;
+    padding: 0.2em;
 }
 
 .tv-14 {
     display: flex;
     width: 100%;
-    background: linear-gradient(hsl(0deg 28% 35%),hsl(152deg 71% 49% / 50%) 20%,hsl(0deg 3% 55%));
+    background: linear-gradient(
+45deg
+, #a09797, transparent);
     /* height: 50%; */
     text-align: center;
-    font-size: 0.8em;
-    border-radius: 0.3em;
+    font-size: 0.6em;
+    border-radius: 0.1em;
     margin: -0.5em;
+    padding: 0.2em;
 }
 
 .tv-14 p{
@@ -73,14 +80,85 @@
 .primary-section-left .container .movie-card .content {
     opacity: 0;
 }
+
+.for-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.6em;
+    width: 100%;
+    padding: 0% 8% 0% 2%;
+}
+
 .for-user .movie-popularity {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    width: 40%;
 }
 .for-user .movie-popularity p{
     margin: 0;
     padding: 0;
     font-size: 0.7em;
 
+}
+
+.for-user ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    font-size: 1em;
+}
+
+.for-user ul li{
+    background: #a7e6e0;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.for-user ul li a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 50px;
+    justify-content: center;
+}
+
+.movie-popularity ::after {
+    content: "User Score";
+    display: inline-block;
+    width: 93px;
+    font-size: 0.6em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.overview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 0.6em;
+    text-align: justify;
+    font-family: cursive;
+}
+.overview .over{
+    width: 100%;
+}
+
+.over h1::after{
+    content: "Creator";
+    display: inline-block;
+    height: 1em;
+    width: 70%;
+    font-size: 0.5em;
 }
