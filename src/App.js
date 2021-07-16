@@ -66,7 +66,9 @@ console.log("fdsfsdfdf")
           <TopBrand />
           <Feedback />
         </Route>
-
+        <Route exact path='/watchlist'> 
+            <WatchList />
+        </Route>
         <Route exact path='/roster'> 
             <SingleMovie />
         </Route>
