@@ -1,0 +1,30 @@
+.watch-bg {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+}
+
+.center-text {
+    font-family: cursive !important;
+    font-size: 200%;
+    color: rgb(1, 165, 143);
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4%;
+    
+}
+
+.watch-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1% 1%;
+    height: 60%;
+    width: 40%;
+}
+
+@media screen and (max-width:570px) {
+
+}
