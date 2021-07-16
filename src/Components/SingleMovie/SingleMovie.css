@@ -6,9 +6,14 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    background: url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/dq18nCTTLpy9PmtzZI6Y2yAgdw5.jpg");
+    
     color: white;
     font-size: 2em;
+}
+
+.primary-section-back {
+    background: url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/dq18nCTTLpy9PmtzZI6Y2yAgdw5.jpg");
+
 }
 
 .primary-section {
@@ -161,4 +166,21 @@
     height: 1em;
     width: 70%;
     font-size: 0.5em;
+}
+
+.movie-cast{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.movie-cast {
+    background: rgb(37, 37, 37);
+}
+
+.recommedation{
+    width: 100%;
 }
