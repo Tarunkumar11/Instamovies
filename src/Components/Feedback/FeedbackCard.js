@@ -17,11 +17,11 @@ function FeedbackCard() {
           </div>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias vel eaque iusto magni consequuntur, eius, blanditiis laudantium quod quasi, architecto perferendis. Doloremque minima eos similique incidunt optio deleniti vitae id?</p>
           
-           <div class="icons">
-             <a href={twitter}><i class="fab fa-twitter"></i></a>
-             <a href={github}><i class="fab fa-github"></i></a>
-             <a href={instagram}><i class="fab fa-instagram"></i></a>
-             <a href={linkedin}><i class="fab fa-linkedin-in"></i></a>
+           <div className="icons">
+             <a href={twitter}><i className="fab fa-twitter"></i></a>
+             <a href={github}><i className="fab fa-github"></i></a>
+             <a href={instagram}><i className="fab fa-instagram"></i></a>
+             <a href={linkedin}><i className="fab fa-linkedin-in"></i></a>
             </div>
         </div>
        </div>

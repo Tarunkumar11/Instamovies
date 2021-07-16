@@ -1,0 +1,86 @@
+.single-movie-container{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background: black;
+    color: white;
+    font-size: 2em;
+}
+
+.primary-section {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 1%;
+}
+
+.primary-section-right {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 4%;
+}
+
+.content-box .movie-type h2 {
+    margin: 0;
+    font-size: 1em;
+}
+.gener {
+    display: grid;
+    grid-template-columns: 40% auto;
+    align-items: center
+}
+
+.gener ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
+}
+
+.gener ul li{
+    background: green;
+    width: 87%;
+    margin: 0% 2% 0% 2%;
+}
+
+.tv-14 {
+    display: flex;
+    width: 100%;
+    background: linear-gradient(hsl(0deg 28% 35%),hsl(152deg 71% 49% / 50%) 20%,hsl(0deg 3% 55%));
+    /* height: 50%; */
+    text-align: center;
+    font-size: 0.8em;
+    border-radius: 0.3em;
+    margin: -0.5em;
+}
+
+.tv-14 p{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.primary-section-left .container .movie-card .content {
+    opacity: 0;
+}
+.for-user .movie-popularity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.for-user .movie-popularity p{
+    margin: 0;
+    padding: 0;
+    font-size: 0.7em;
+
+}
