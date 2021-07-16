@@ -1,0 +1,57 @@
+.cast-toc{
+    width: 100%;
+    margin-left: 8%;
+}
+
+.cast {
+    margin-left: 1em;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(20,273px);
+    grid-gap: 20px;
+    overflow-x: scroll;
+    margin-bottom: 2em;
+}
+
+.cast-card {
+    height: 22em;
+    font-size: 0.5em;
+    width: 100%;
+}
+cast-card .card:hover{
+    bottom: -8%;
+}
+.cast-card .card .card-content:hover {
+    bottom: -8%;
+}
+.cast-card .card .card-content icon {
+    display: none;
+}
+
+
+.cast::-webkit-scrollbar {
+    width: 0.5em;
+    height: 15px;
+  }
+  
+.cast::-webkit-scrollbar-track {
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px 10px #353535;
+    border: solid 3px transparent;  
+    
+  }
+  
+  .cast::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 8px 23px #59ea0e;
+    border: solid 5px transparent;
+  }
+  
+  .cast ::-webkit-scrollbar:vertical {
+    display: none;
+  }
+
+
