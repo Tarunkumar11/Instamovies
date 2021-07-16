@@ -7,15 +7,15 @@ const instagram = ""
 const github = ""
 function Footer() {
     return (
-        <div class="footer">
+        <div className="footer">
             <ul>
                 <h1>Instamovie</h1>
                 <p>Instamovie uses the TMDB Api and is not released under the MIT license.</p>
-                <div class="icons">
-                    <a href={twitter}><i class="fab fa-twitter"></i></a>
-                    <a href={github}><i class="fab fa-github"></i></a>
-                    <a href={instagram}><i class="fab fa-instagram"></i></a>
-                    <a href={instagram}><i class="fab fa-linkedin-in"></i></a>
+                <div className="icons">
+                    <a href={twitter}><i className="fab fa-twitter"></i></a>
+                    <a href={github}><i className="fab fa-github"></i></a>
+                    <a href={instagram}><i className="fab fa-instagram"></i></a>
+                    <a href={instagram}><i className="fab fa-linkedin-in"></i></a>
                 </div>
                 <p>© developed by Tarun Saini</p>
             </ul>

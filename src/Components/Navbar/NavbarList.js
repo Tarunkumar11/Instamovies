@@ -5,7 +5,7 @@ function NavbarList(props) {
     return (
         <nav>
             {
-                navItem.map((item) => {return <li><a href="#">{item}</a></li>})
+                navItem.map((item) => {return <li key={item}><a href="#">{item}</a></li>})
             }
         </nav>
     )
