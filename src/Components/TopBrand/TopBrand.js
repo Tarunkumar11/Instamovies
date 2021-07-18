@@ -1,10 +1,10 @@
 import React from 'react'
 import Logo from './Logo'
-import amazonPrime from 'C:/Users/sagar/Desktop/Instamovie/instamovies/src/images/amazon.png'
-import netflix from 'C:/Users/sagar/Desktop/Instamovie/instamovies/src/images/netflixmod.ce186f95.png'
-import vudu from 'C:/Users/sagar/Desktop/Instamovie/instamovies/src/images/vudu.8aae4b81.svg'
-import tmdb from 'C:/Users/sagar/Desktop/Instamovie/instamovies/src/images/tmdb.24a6fdb9.svg'
-import kanopy from 'C:/Users/sagar/Desktop/Instamovie/instamovies/src/images/kanopy-logo.c65c9722.svg'
+import amazonPrime from '../../images/amazon.png'
+import netflix from '../../images/netflixmod.ce186f95.png'
+import vudu from '../../images/vudu.8aae4b81.svg'
+import tmdb from '../../images/tmdb.24a6fdb9.svg'
+import kanopy from '../../images/kanopy-logo.c65c9722.svg'
 import './TopBrand.css'
 
 function TopBrand() {

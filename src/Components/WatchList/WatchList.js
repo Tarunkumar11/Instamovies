@@ -1,5 +1,5 @@
 import React from 'react'
-import watch from 'C:/Users/Siddharth Garewal/Desktop/Instamovies-main/Instamovies-main/src/images/watchlist/undraw-pending.5ad17bb5.svg'
+import watch from '../../images/watchlist/undraw-pending.5ad17bb5.svg'
 import './watch.css'
 
 export const WatchList = () => {

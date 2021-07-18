@@ -1,6 +1,6 @@
 import React from 'react'
 import './MovieCard.css'
-import cardImage from 'C:/Users/sagar/Desktop/Instamovie/instamovies/src/images/background.png'
+import cardImage from '../../images/background.png'
 const navigate = "#"
 function MovieCard(props) {
     const prefix = "https://www.themoviedb.org/t/p/w300_and_h450_bestv2"

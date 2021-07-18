@@ -6,7 +6,7 @@
     height: 80vh;
     position: relative;
     margin-top: 0em;
-    background: url("C:/Users/sagar/Desktop/Instamovie/instamovies/src/images/greenland.jpg");
+    background: url("../../images/greenland.jpg");
     background-position: center;
     background-size: cover;
     backface-visibility: visible;
