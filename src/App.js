@@ -8,7 +8,7 @@ import TopBrand from './Components/TopBrand/TopBrand';
 import Footer from './Components/Footer/Footer';
 import Feedback from './Components/Feedback/Feedback';
 import SingleMovie from './Components/SingleMovie/SingleMovie';
-
+import Login from './Components/Login/Login';
 const TreandingContext = React.createContext()
 
 function App() {
@@ -70,6 +70,10 @@ console.log("fdsfsdfdf")
         <Route exact path='/roster'> 
             <SingleMovie />
         </Route>
+        <Route exact path='/login'> 
+            <Login />
+        </Route>
+
             {/* <Trending data= {{title : "Top Rated", movies_data: topRate } }/><Trending data= {{title: "Discover new Interest", movies_data: newInterest}} /> */}
       </Router>
       <Footer />
