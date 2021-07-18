@@ -10,7 +10,7 @@ function Navbar() {
             <Navbarheading />
         </div>
         <div className="Navbar-items">
-            <NavbarList items={['Home', 'Watchlist','Login']} />
+            <NavbarList items={['Home', 'Watchlist', 'Filter', 'Login']} />
         </div>
     </nav>
    )
