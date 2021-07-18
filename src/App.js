@@ -9,6 +9,7 @@ import Footer from './Components/Footer/Footer';
 import Feedback from './Components/Feedback/Feedback';
 import SingleMovie from './Components/SingleMovie/SingleMovie';
 import Login from './Components/Login/Login';
+import WatchList from './Components/WatchList/WatchList'
 const TreandingContext = React.createContext()
 
 function App() {
