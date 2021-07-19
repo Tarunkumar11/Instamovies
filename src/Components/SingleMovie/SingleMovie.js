@@ -5,9 +5,11 @@ import Popularity from './Popularity'
 import Cast from './Cast'
 import Recommendation from './Recommendation'
 
-function SingleMovie() {
+function SingleMovie(props) {
     const singleMovieData = {"backdrop_path":"/dq18nCTTLpy9PmtzZI6Y2yAgdw5.jpg","title":"Black Widow","genre_ids":[28,12,53],"original_language":"en","original_title":"Black Widow","poster_path":"/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg","video":false,"vote_average":8.2,"overview":"Natasha Romanoff, also known as Black Widow, confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Pursued by a force that will stop at nothing to bring her down, Natasha must deal with her history as a spy and the broken relationships left in her wake long before she became an Avenger.","id":497698,"vote_count":2209,"release_date":"2021-07-07","adult":false,"popularity":9790.858,"media_type":"movie"}
     const playVedio = ""
+    console.log("this is a test")
+    console.log(props)
     return (
         <div>
             <div className="single-movie-container">

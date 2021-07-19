@@ -1,7 +1,7 @@
 import React from 'react'
 import MovieCard from './MovieCard'
 import './Trending.css'
-
+import {Link} from "react-router-dom";
 
 
 function Trending(props) {
@@ -15,41 +15,9 @@ function Trending(props) {
                 <div className="movie-card">
                     {
                         props.data.movies_data.map((moviedata) => {
-                            return <MovieCard key = {moviedata.id}  singleMovieData= {moviedata}/>
+                            return <Link to="/singlemovie" key = {moviedata.id}  ><MovieCard  singleMovieData= {moviedata}/></Link>
                         })
                     }
-                    
-                    {/* <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard /> */}
                 </div>
             </div>  
         </div>
