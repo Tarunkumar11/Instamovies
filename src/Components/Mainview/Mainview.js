@@ -6,15 +6,14 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function Mainview() {
 
-    const [searchMoviesList, setSearchMovies]  = useState([]);
+    const [searchMoviesList, setSearchMovies]  = useState(null);
 
     function searchMovies(e) {
         let value =  document.getElementById("search-bar").value
         let url =  `https://api.themoviedb.org/3/search/company?api_key=01fa22077a62608ab466b3c017eba6a0&query=${value}`
-        
+        console.log(url)
         axios.get(url).then((response) => {
-             
-            setSearchMovies(response)
+            setSearchMovies(response.data)
         })   
     }
     
@@ -35,10 +34,12 @@ function Mainview() {
                 <input type="text" id="search-bar" placeholder="Search your favourite movies" />
                 <input className="search-btn" onClick={searchMovies} type="submit" placeholder="Search" />
             </div>
+            { searchMoviesList && <SearchResults movies_data={searchMoviesList} /> }
         </div>
+
         <Router>
             <Route  exact path='/search'>
-                <SearchResults movies_data={temp}/>
+                
             </Route>
         </Router>
         
