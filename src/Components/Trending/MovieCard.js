@@ -4,7 +4,7 @@ import cardImage from '../../images/background.png'
 const navigate = "#"
 function MovieCard(props) {
     const prefix = "https://www.themoviedb.org/t/p/w300_and_h450_bestv2"
-    console.log(props)
+    
     return (
         <div className="container">
             <div className="movie-card">

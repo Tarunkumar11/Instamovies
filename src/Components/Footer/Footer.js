@@ -15,7 +15,7 @@ function Footer() {
                     <a href={twitter}><i className="fab fa-twitter"></i></a>
                     <a href={github}><i className="fab fa-github"></i></a>
                     <a href={instagram}><i className="fab fa-instagram"></i></a>
-                    <a href={instagram}><i className="fab fa-linkedin-in"></i></a>
+                    <a href={linkedin}><i className="fab fa-linkedin-in"></i></a>
                 </div>
                 <p>© developed by Tarun Saini</p>
             </ul>

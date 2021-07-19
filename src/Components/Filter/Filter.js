@@ -10,6 +10,8 @@ function Filter() {
         }
 
     }
+
+    const navigator = ""
     return (
         <div className="filter" id="filterid">
             <div className="close-icon">
@@ -18,7 +20,7 @@ function Filter() {
             <div className="filter-container">
                 <h2>Filters</h2>
                 <ul>
-                    <li><a href="#">
+                    <li><a href="navigator">
                         <select>
                             <option>genres</option>
                             <option>a</option>
@@ -26,7 +28,7 @@ function Filter() {
                             <option>a</option>
                         </select>
                     </a></li>
-                    <li><a href="#">
+                    <li><a href="navigator">
                         <select>
                             <option>release year</option>
                             <option>a</option>
@@ -34,7 +36,7 @@ function Filter() {
                             <option>a</option>
                         </select>
                     </a></li>
-                    <li><a href="#">
+                    <li><a href="navigator">
                         <select>
                             <option>Bollywood</option>
                             <option>a</option>
@@ -42,7 +44,7 @@ function Filter() {
                             <option>a</option>
                         </select>
                     </a></li>
-                    <li><a href="#">
+                    <li><a href="navigator">
                         <select>
                             <option>Hollywood</option>
                             <option>a</option>

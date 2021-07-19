@@ -1,7 +1,7 @@
 import React from 'react'
 import './FeedbackCard.css'
 
-const person = "https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg";
+// const person = "https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg";
 const linkedin = "";
 const twitter = ""
 const instagram = ""

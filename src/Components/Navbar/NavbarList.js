@@ -7,7 +7,7 @@ function NavbarList(props) {
         if(filter !== null) {
             filter.style.display = "inline"
         }
-        console.log("sdflkjaskl")  
+        
           
     }
     
