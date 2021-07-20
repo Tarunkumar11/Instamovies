@@ -16,11 +16,11 @@ function NavbarList(props) {
             {
                 navItem.map((item) => {
 
-                        if(item === "Filter" ){
-                            return <li key={item} onClick={filterHandle}><a href="#">{item}</a></li>    
+                        if(item.btn === "Filter" ){
+                            return <li key={item.btn} onClick={filterHandle}><a href={item.link}>{item.btn}</a></li>    
                         }
                         else    
-                            return <li key={item}><a href="#">{item}</a></li>
+                            return <li key={item.btn}><a href={item.link}>{item.btn}</a></li>
                     })
             }
         </nav>
