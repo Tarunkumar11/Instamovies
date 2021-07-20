@@ -59,7 +59,7 @@ const sciFi = {'result': temp}
           <Feedback />
         </Route>
         <Route exact path='/watchlist' render={(props) => <WatchList text="Hello, " {...props} />} />
-        <Route exact path='/singlemovie'  render={(props) => <SingleMovie singlemoviedata = {props}/>}  />
+        <Route exact path='/singlemovie/:title' render={(props) => <SingleMovie singlemoviedata = {props} />}  />
         <Route exact path='/login' component={Login} />
       </Router>
       <Footer />

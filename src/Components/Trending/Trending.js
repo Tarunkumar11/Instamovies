@@ -5,6 +5,8 @@ import {Link} from "react-router-dom";
 
 
 function Trending(props) {
+    
+    // console.log(props)
 
     return (
         <div className="trending-section">
@@ -15,7 +17,17 @@ function Trending(props) {
                 <div className="movie-card">
                     {
                         props.data.movies_data.map((moviedata) => {
-                            return <Link to="/singlemovie" key = {moviedata.id}  ><MovieCard  singleMovieData= {moviedata}/></Link>
+                            return <Link to={{ 
+                                            pathname: `/singlemovie/${moviedata.title}`, 
+                                            temp : "tesginfdsf asdfkasldfjas;kldfjs",
+                                            moviedata: {moviedata}
+                                            
+                                            }
+                                            }
+                                            
+                                            params = {moviedata}
+
+                                            key = {moviedata.id} ><MovieCard  singleMovieData= {moviedata}/></Link>
                         })
                     }
                 </div>
