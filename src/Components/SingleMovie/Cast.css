@@ -10,7 +10,7 @@
     flex-wrap: wrap;
     position: relative;
     display: grid;
-    grid-template-columns: repeat(20,273px);
+    grid-template-columns: repeat(50,273px);
     grid-gap: 20px;
     overflow-x: scroll;
     margin-bottom: 2em;
@@ -21,6 +21,7 @@
     font-size: 0.5em;
     width: 100%;
 }
+
 cast-card .card:hover{
     bottom: -8%;
 }
@@ -51,6 +52,10 @@ cast-card .card:hover{
   }
   
   .cast ::-webkit-scrollbar:vertical {
+    display: none;
+  }
+
+  .cast-icon {
     display: none;
   }
 
