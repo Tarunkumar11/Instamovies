@@ -27,7 +27,6 @@ function App() {
                   {
                       setMovies(response.data)
                       const temp = []
-                      console.log(response)
                       for(let i = 0; response.data &&  i< response.data.results.length; i++){
                         if(response.data.results[i].genre_ids.includes(878) ) {
                           temp.push(response.data.results[i])
@@ -51,7 +50,7 @@ function App() {
   // const TreandingContext = React.createContext()
   
   return (
-    <div className="App">
+    <div className="App"> 
       <Navbar />
       <Router >
         <Route exact path='/'>
@@ -62,7 +61,7 @@ function App() {
           <Feedback />
         </Route>
         <Route exact path='/watchlist' render={(props) => <WatchList text="Hello, " {...props} />} />
-        <Route exact path='/singlemovie/:title' render={(props) => <SingleMovie singlemoviedata = {props} />}  />
+        <Route exact path='/movie/:id/:title' render={(props) => <SingleMovie singlemoviedata = {props} />}  />
         <Route exact path='/login' component={Login} />
       </Router>
       <Footer />
