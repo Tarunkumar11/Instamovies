@@ -11,7 +11,6 @@ function Mainview() {
     function searchMovies(e) {
         let value =  document.getElementById("search-bar").value
         let url =  `https://api.themoviedb.org/3/search/company?api_key=01fa22077a62608ab466b3c017eba6a0&query=${value}`
-        console.log(url)
         axios.get(url).then((response) => {
             setSearchMovies(response.data)
         })   

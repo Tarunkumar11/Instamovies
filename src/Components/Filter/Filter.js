@@ -11,7 +11,6 @@ function Filter() {
 
     }
 
-    const navigator = ""
     return (
         <div className="filter" id="filterid">
             <div className="close-icon">

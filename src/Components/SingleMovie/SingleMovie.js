@@ -1,75 +1,102 @@
-import React from 'react'
+import React, {useState, useEffect}from 'react'
 import MovieCard from '../Trending/MovieCard'
 import './SingleMovie.css'
 import Popularity from './Popularity'
 import Cast from './Cast'
 import Recommendation from './Recommendation'
+import axios from 'axios'
+import Loader from '../Loader/Loader'
+
 
 function SingleMovie(props) {
-    const singleMovieData = {"backdrop_path":"/dq18nCTTLpy9PmtzZI6Y2yAgdw5.jpg","title":"Black Widow","genre_ids":[28,12,53],"original_language":"en","original_title":"Black Widow","poster_path":"/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg","video":false,"vote_average":8.2,"overview":"Natasha Romanoff, also known as Black Widow, confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Pursued by a force that will stop at nothing to bring her down, Natasha must deal with her history as a spy and the broken relationships left in her wake long before she became an Avenger.","id":497698,"vote_count":2209,"release_date":"2021-07-07","adult":false,"popularity":9790.858,"media_type":"movie"}
+    
+    const [movie, setMovies] = useState(null);
+    const movieid = props.singlemoviedata.match.params.id
+    useEffect((props)=> {
+        const url   = `https://api.themoviedb.org/3/movie/${movieid}?api_key=01fa22077a62608ab466b3c017eba6a0&language=en-US`
+        axios.get(url).then((response) => {
+            setMovies(response.data)
+            })
+        }, [movieid])
+    
     const playVedio = ""
-    console.log("this is a test")
-    console.log(props)
-    return (
-        <div>
+    let style = null
+    let popularityPercentage = 30;
+    
+    if(movie) {
+        style  = {  
+            backgroundImage: "url(" + "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces" + movie.backdrop_path +  ")",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+        }
+        popularityPercentage = movie.vote_average * 10;
+    }
+    
+    if(movie){
+        return (
             <div className="single-movie-container">
-                <div className="primary-section-back">
-                    <section className="primary-section">
-                        <div className="primary-section-left">
-                            <MovieCard singleMovieData={singleMovieData}/>
+            <div className="primary-section-back" style={style}>
+                <section className="primary-section">
+                    <div className="primary-section-left">
+                        <MovieCard singleMovieData={movie}/>
+                    </div>
+                    <div className="primary-section-right">
+                        <div className="content-box">
+                            <div className="movie-type">   
+                                <h2>{movie.title}</h2>
+                            </div>
+                            <ul className="gener">
+                                {
+                                    movie.genres.map((genre) => {return <li key={genre.id}>{genre.name}</li> } )
+                                }
+                                <li key={ movie.runtime}>{movie.runtime}m</li>
+                            </ul>
                         </div>
-                        <div className="primary-section-right">
-                            <div className="content-box">
-                                <div className="movie-type">   
-                                    <h2>Movie Name</h2>
-                                </div>
-                                <ul className="gener">
-                                    <li>tv14</li>
-                                    <li>Drama</li>
-                                    <li>Romance</li>
-                                    <li>43m</li>
-                                </ul>
+
+                        <div className="for-user">
+                            <div className="movie-popularity">
+                                <Popularity popularityPercentage={popularityPercentage} />
+                                
                             </div>
 
-                            <div className="for-user">
-                                <div className="movie-popularity">
-                                    <Popularity />
-                                    
-                                </div>
+                            <ul>
+                                <li><a href={playVedio}><i className="far fa-bookmark"></i></a></li>
+                                <li><a href={playVedio}><i className="far fa-heart"></i></a></li>
+                                <li><a href={playVedio}><i className="fas fa-play"></i></a></li>
+                            </ul>
+                        </div>
 
-                                <ul>
-                                    <li><a href={playVedio}><i className="far fa-bookmark"></i></a></li>
-                                    <li><a href={playVedio}><i className="far fa-heart"></i></a></li>
-                                    <li><a href={playVedio}><i className="fas fa-play"></i></a></li>
-                                </ul>
+                        <div className="overview">
+                            <div className="movie-type over">   
+                                <h2>Overview</h2>
                             </div>
+                            <div className="content">
+                                <p>{movie.overview}</p>
+                            </div>
+                            <div className="movie-type over">
+                                <h1>Tarun Saini</h1>
 
-                            <div className="overview">
-                                <div className="movie-type over">   
-                                    <h2>Overview</h2>
-                                </div>
-                                <div className="content">
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias vel eaque iusto magni consequuntur, eius, blanditiis laudantium quod quasi, architecto perferendis. Doloremque minima eos similique incidunt optio deleniti vitae id?</p>
-                                </div>
-                                <div className="movie-type over">
-                                    <h1>Tarun Saini</h1>
-
-                                </div>
                             </div>
                         </div>
-                    </section>
-                </div>
-
-                <section className="movie-cast">
-                    <Cast />
-                </section>
-
-                <section className="recommedation">
-                    <Recommendation />
+                    </div>
                 </section>
             </div>
+
+            <section className="movie-cast">
+                <Cast id={movieid} />
+            </section>
+
+            <section className="recommedation">                        
+                <Recommendation id={movieid}  />
+            </section>
         </div>
-    )
+
+        )
+    }
+    else {
+        return <Loader />
+    }
 }
 
 export default SingleMovie

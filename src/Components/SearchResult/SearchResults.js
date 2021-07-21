@@ -4,7 +4,6 @@ import MovieCard from '../Trending/MovieCard'
 
 function SearchResults(props) {
     
-    console.log(props)
     return (
         <div className="result">
             <div className="container-result">
