@@ -3,6 +3,7 @@ import './Login.css'
 
 
 function Login() {
+    const lofd = ""
     return (
         <div className='login-container'>
             <div className="box">
@@ -30,8 +31,8 @@ function Login() {
                             <div className="inputBox">
                                 <input type="submit" placeholder="Login" />
                             </div>
-                                <p className="forgot">forgot password ?<a href="#">Click here</a></p>
-                                <p className="sign-up">Don't have an account?<a href="#">Click here</a></p>
+                                <p className="forgot">forgot password ?<a href={lofd}>Click here</a></p>
+                                <p className="sign-up">Don't have an account?<a href={lofd}>Click here</a></p>
                         </form>
                     </div>
                 </div>
