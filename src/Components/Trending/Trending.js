@@ -14,7 +14,7 @@ function Trending(props) {
                 <div className="movie-card">
                     {
                         props.data.movies_data.map((moviedata) => {
-                            return <Link to={{ pathname: `/movie/${moviedata.id}/${moviedata.title}`}}
+                            return <Link to={{ pathname: `/movie/${moviedata.id}/${moviedata.title.replace(" ", "-")}`}}
                                             key = {moviedata.id} ><MovieCard  singleMovieData= {moviedata}/></Link>
                         })
                     }

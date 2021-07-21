@@ -12,9 +12,8 @@ function FeedbackCard(props) {
   let extraclass2 = ''
   let castName = 'That is Awesome'
   let overview = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias vel eaque iusto magni consequuntur,?"
-  let backgroundpic = "https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg"
   let style = {
-    backgroundImage: "url(" + "https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg" +  ")",
+    backgroundImage: "url('https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg)",
   }
   
   if(props.data) {

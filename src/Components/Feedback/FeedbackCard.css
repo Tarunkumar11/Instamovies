@@ -27,7 +27,8 @@
       transition: bottom 1s;
       font-family:cursive;
       text-align: justify;
-      width: 78%;
+      width: -webkit-fill-available;
+
       
   }
   
