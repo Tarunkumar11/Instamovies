@@ -84,7 +84,7 @@ function SingleMovie(props) {
             </div>
 
             <section className="movie-cast">
-                <Cast />
+                <Cast id={movieid} />
             </section>
 
             <section className="recommedation">                        
