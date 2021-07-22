@@ -1,6 +1,7 @@
 import React from 'react'
 import MovieCard from '../Trending/MovieCard'
-
+import './searchResult.css'
+import {Link} from "react-router-dom";
 
 function SearchResults(props) {
     
@@ -10,12 +11,15 @@ function SearchResults(props) {
                 <div className="movie-type">   
                     <h2>Searched Result</h2>
                 </div>
-                {
-                    props.movies_data.results.map((moviedata) => 
+                <div className="search-result">
                     {
-                        return <MovieCard key = {moviedata.id}  singleMovieData= {moviedata}/>
-                    })
-                }
+                        props.movies_data.results.map((moviedata) => {
+                            return <Link to={{ pathname: `/movie/${moviedata.id}/${moviedata.title.split(" ").join("-")}`}}
+                                            key = {moviedata.id} ><MovieCard  singleMovieData= {moviedata}/></Link>
+                        })
+
+                    }
+                </div>
             </div>
         </div>
     )

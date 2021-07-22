@@ -1,0 +1,33 @@
+.result{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background: black;
+    
+}
+
+.container-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.search-result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.movie-type {
+    display: flex;
+    align-items: center;
+    width: 93%;
+    justify-content: flex-start;
+}
