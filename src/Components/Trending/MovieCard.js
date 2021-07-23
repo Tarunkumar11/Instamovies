@@ -1,7 +1,7 @@
 import React from 'react'
 import './MovieCard.css'
-import cardImage from '../../images/background.png'
-const navigate = "#"
+// import cardImage from '../../images/background.png'
+// const navigate = "#"
 function MovieCard(props) {
     const prefix = "https://www.themoviedb.org/t/p/w300_and_h450_bestv2"
     
@@ -17,9 +17,9 @@ function MovieCard(props) {
                     </div>
 
                     <ul className="sci">
-                        <li style={{"--i":1}}><a href={navigate}><i className="far fa-star">{ props.singleMovieData.vote_average}</i></a></li>
+                        <li style={{"--i":1}}><i className="far fa-star">{ props.singleMovieData.vote_average}</i></li>
                         <li style={{"--i":3}}>{ props.singleMovieData.release_date}</li>
-                        <li style={{"--i":2}}><a href={navigate}><i className="far fa-heart">{props.singleMovieData.vote_count}</i></a></li>
+                        <li style={{"--i":2}}><i className="far fa-heart">{props.singleMovieData.vote_count}</i></li>
                     </ul>
 
                     <div className="watch-list">

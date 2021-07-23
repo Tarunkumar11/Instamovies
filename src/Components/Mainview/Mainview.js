@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './Mainview.css'
 import axios from 'axios'
 import SearchResults from '../SearchResult/SearchResults';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function Mainview() {
 
@@ -12,7 +12,6 @@ function Mainview() {
         let value =  document.getElementById("search-bar").value
         let url =  `https://api.themoviedb.org/3/search/movie?api_key=01fa22077a62608ab466b3c017eba6a0&query=${value}`
         axios.get(url).then((response) => {
-            console.log(response.data)
             setSearchMovies(response.data)
         })   
     }
