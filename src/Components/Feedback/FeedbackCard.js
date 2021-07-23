@@ -13,14 +13,15 @@ function FeedbackCard(props) {
   let castName = 'That is Awesome'
   let overview = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias vel eaque iusto magni consequuntur,?"
   let style = {
-    backgroundImage: "url('https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg)",
+    // backgroundImage: "url('https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg)",
   }
   
   if(props.data) {
     castName = props.data.name;
     overview = props.data.character;
-    style  = {  
-      backgroundImage: "url(" + "https://www.themoviedb.org/t/p/w300_and_h450_face" + props.data.profile_path +  ")",
+    const imagePath = "https://www.themoviedb.org/t/p/w300_and_h450_face" +props.data.profile_path 
+    style  = { 
+      backgroundImage: `url(${imagePath})`, 
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat'

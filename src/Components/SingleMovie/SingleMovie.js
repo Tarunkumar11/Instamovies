@@ -25,7 +25,7 @@ function SingleMovie(props) {
     
     if(movie) {
         style  = {  
-            backgroundImage: "url(" + "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces" + movie.backdrop_path +  ")",
+            backgroundImage: `url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces" + ${movie.backdrop_path})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'
