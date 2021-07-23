@@ -47,12 +47,12 @@
     list-style-type: none;
 }
 
-.navbar-bar nav li a {
+.navbar-bar nav a {
     text-decoration: none;
     color: white;
 }
 
-.navbar-bar nav li a::after {
+.navbar-bar nav a::after {
     content: "";
     margin-top: 0.5em;
     display: block;
@@ -62,7 +62,7 @@
     transition: 1s;
 }
 
-.navbar-bar nav li a:hover::after{
+.navbar-bar nav a:hover::after{
     opacity: 1;
 }
 

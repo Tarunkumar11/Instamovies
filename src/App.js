@@ -51,8 +51,9 @@ function App() {
   
   return (
     <div className="App"> 
-      <Navbar />
+      
       <Router >
+        <Navbar />
         <Route exact path='/'>
           <Mainview />
           {  movies && <Trending data= {{title: "Trending", movies_data: movies.results }} />}
