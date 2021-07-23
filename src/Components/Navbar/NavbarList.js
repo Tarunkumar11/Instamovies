@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
 function NavbarList(props) {
     const navItem = props.items;
@@ -17,10 +18,10 @@ function NavbarList(props) {
                 navItem.map((item) => {
 
                         if(item.btn === "Filter" ){
-                            return <li key={item.btn} onClick={filterHandle}><a href={item.link}>{item.btn}</a></li>    
+                            return <Link to = {{pathname: `/${item.link}`}} key={item.btn} onClick={filterHandle} ><li>{item.btn}</li> </Link>    
                         }
                         else    
-                            return <li key={item.btn}><a href={item.link}>{item.btn}</a></li>
+                            return <Link to = {{pathname: `/${item.link}`}} key={item.btn}><li>{item.btn}</li> </Link> 
                     })
             }
         </nav>
