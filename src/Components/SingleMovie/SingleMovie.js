@@ -24,8 +24,9 @@ function SingleMovie(props) {
     let popularityPercentage = 30;
     
     if(movie) {
+        const backImage  = "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces" + movie.backdrop_path;
         style  = {  
-            backgroundImage: `url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces" + ${movie.backdrop_path})`,
+            backgroundImage: `url(${backImage})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'
