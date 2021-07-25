@@ -3,10 +3,10 @@ import './Feedback.css'
 import NewFeedback from '../NewFeedback/NewFeedback';
 
 function Feedback() {
-    const data = [{'name':"tarun Saini", "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laborum unde minus ducimus sed consequuntur dolores assumenda, ab quibusdam.", "url":"https://picsum.photos/200/300"},
-                {'name':"Shivam Saini", "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laborum unde minus ducimus sed consequuntur dolores assumenda, ab quibusdam.","url":"https://picsum.photos/200/300"},
-                {'name':"Sathyam Saini", "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laborum unde minus ducimus sed consequuntur dolores assumenda, ab quibusdam.","url":"https://picsum.photos/200/300"},
-                {'name':"Chotu Saini", "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laborum unde minus ducimus sed consequuntur dolores assumenda, ab quibusdam.","url":"https://picsum.photos/200/300"},
+    const data = [{'name':"Saniya Saini", "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laborum unde minus ducimus sed consequuntur dolores assumenda, ab quibusdam.", "url":"https://i.pinimg.com/564x/19/cf/78/19cf789a8e216dc898043489c16cec00.jpg"},
+                {'name':"Shivam Saini", "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laborum unde minus ducimus sed consequuntur dolores assumenda, ab quibusdam.","url":"https://thispersondoesnotexist.com/image"},
+                {'name':"Anu Saini", "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laborum unde minus ducimus sed consequuntur dolores assumenda, ab quibusdam.","url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQnm7qaETgFaoTabNbopUVHpsBcqASi5M1IQ&usqp=CAU"},
+                {'name':"Chotu Saini", "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laborum unde minus ducimus sed consequuntur dolores assumenda, ab quibusdam.","url":"https://thispersondoesnotexist.com/image"},
                 ]
     const [currIndex, setIndex] = useState([0,1])
     const  length = data.length
@@ -41,7 +41,7 @@ function Feedback() {
 
             <div className="feedback-content" >
                 <div className="backward" onClick={backIndex} >
-                    <i class="fas fa-arrow-circle-left"></i>
+                    <i className="fas fa-arrow-circle-left"></i>
                 </div>
                 <div className="feedback">
                     {
@@ -51,7 +51,7 @@ function Feedback() {
                     }
                 </div>
                 <div className="forward" onClick={nextindex}>
-                    <i class="fas fa-arrow-circle-right"></i>
+                    <i className="fas fa-arrow-circle-right"></i>
                 </div>
             </div>
         </div>

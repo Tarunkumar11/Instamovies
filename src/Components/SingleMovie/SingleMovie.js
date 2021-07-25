@@ -12,7 +12,8 @@ function SingleMovie(props) {
     
     const [movie, setMovies] = useState(null);
     const [trailerFlag, setTrailerFlag]  = useState(false)
-
+    const [trailers, setTrailers] = useState(null)
+    
     const movieid = props.singlemoviedata.match.params.id
     useEffect((props)=> {
         const url   = `https://api.themoviedb.org/3/movie/${movieid}?api_key=01fa22077a62608ab466b3c017eba6a0&language=en-US`
@@ -21,10 +22,47 @@ function SingleMovie(props) {
             })
         }, [movieid])
     
+
+    function setMovieTrailer() {
+        setTrailerFlag(true)
+        const newurl = `https://api.themoviedb.org/3/movie/${movieid}/videos?api_key=01fa22077a62608ab466b3c017eba6a0&language=en-US`
+        axios.get(newurl).then((response) => {
+            // const trailerUrl = "https://www.youtube.com/watch?v=" + response.data.results
+            console.log(response.data.results)
+            setTrailers(response.data.results)
+            })
+            
+    }
+
+    let  length = 0
+    if(trailers !== null){
+        length = trailers.length
+    }
+    const [currIndex, setIndex] = useState(0)
+    function nextindex(){
+        setIndex((preIndex) =>{
+            let next = preIndex + 1
+            if(next>= length){
+                next = 0
+            }
+            return next
+        } )
+    }
+
+    function backIndex(){
+        setIndex((preIndex) => {
+            let pre = preIndex - 1
+            if(pre < 0){
+                pre = length -1
+            }
+            return pre
+        })
+    }
+
+
     const playVedio = "#"
     let style = null
     let popularityPercentage = 30;
-    
     if(movie) {
         const backImage  = "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces" + movie.backdrop_path;
         style  = {  
@@ -66,18 +104,22 @@ function SingleMovie(props) {
                             <ul>
                                 <li><a href={playVedio}><i className="far fa-bookmark"></i></a></li>
                                 <li><a href={playVedio}><i className="far fa-heart"></i></a></li>
-                                <li><a href={playVedio} onClick={(e) => {setTrailerFlag(true)}} ><i className="fas fa-play"></i></a></li>
+                                <li><a href={playVedio} onClick={setMovieTrailer} ><i className="fas fa-play"></i></a></li>
                             </ul>
                         </div>
 
-                        {trailerFlag && <div className="trailer">
-                            {/* <ReactPlayer url="https://youtu.be/luai0p0y2zE" controls
-    playbackRate = {2}
-    width = "75%"
-    height = "100%"/> */}
-                            <video src="https://www.youtube.com/watch?v=A4Snb7yu5cE" type="video/mp4"  controls='true' />
-                            
-                            <div className="closeicon"><i class="far fa-times-circle" onClick={(e) => {setTrailerFlag(false)}}></i></div>
+                        {trailerFlag && trailers && <div className="trailer">
+                            <div className="trailer-backward" onClick={backIndex} >
+                                <i className="fas fa-arrow-circle-left"></i>
+                            </div>
+                            {
+                                <ReactPlayer url={"https://www.youtube.com/watch?v="+trailers[currIndex].key} width = "80%" height = "80%" controls />
+                            }
+                            <div className="closeicon"><i className="far fa-times-circle" onClick={(e) => {setTrailerFlag(false);}}></i></div>
+                            <div className="trailer-forward" onClick={nextindex}>
+                                <i className="fas fa-arrow-circle-right"></i>
+                            </div>
+
                         </div>}
 
                         <div className="overview">
