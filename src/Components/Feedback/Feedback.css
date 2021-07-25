@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: black;
+    background: rgb(0 0 0 / 85%);
     padding-bottom: 1%;
 }
 .feedback {
@@ -11,7 +11,7 @@
     align-items: center;
     /* flex-wrap: wrap; */
     /* padding: 2%; */
-    background: black;
+    /* background: black; */
     width: 100%;
     flex-wrap: wrap;
 }

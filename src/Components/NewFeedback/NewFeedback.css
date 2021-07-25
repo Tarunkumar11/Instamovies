@@ -67,3 +67,12 @@
     height: 236px;
     }
   }
+
+  @media screen and (max-width:400px) {
+    .profile-img{
+        min-width: 151px;
+        width: 151px;
+        height: 151px;
+    }
+    
+}
