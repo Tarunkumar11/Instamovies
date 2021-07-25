@@ -1,3 +1,9 @@
+.search-bar-section{
+    position: relative;
+}
+.primary-section-back {
+    width: 100%;
+}
 .center-view {
     display: flex;
     align-items: center;

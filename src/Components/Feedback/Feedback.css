@@ -3,16 +3,35 @@
     align-items: center;
     flex-direction: column;
     background: black;
+    padding-bottom: 1%;
 }
 .feedback {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     /* padding: 2%; */
     background: black;
     width: 100%;
+    flex-wrap: wrap;
 }
+.feedback-content{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    padding: 0 1%;
+}
+
+.backward, .forward{
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+
+}
+/* .backward i{
+    width: 2em;
+    height: 2em;
+} */
 /* .feedback FeedbackCard {
     margin: 5%;
 } */

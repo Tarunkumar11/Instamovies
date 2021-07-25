@@ -48,33 +48,58 @@ function Mainview() {
     }
     
     return (
-        <>
-         <Particles  className="partical"  params={{
+        <div className="search-bar-section">
+         <Particles  id = "partical" className="partical"  params={{
+            // interactivity:{
+            //         detect_on:"Particles",
+            //         events:{
+            //             onhover:{
+            //                 enable:true,
+            //                 mode:"repulse"
+            //             },
+            //             onclick:{
+            //                 enable:true,
+            //                 mode:"push"
+            //             },
+            //             resize:true},
+            //         modes:{
+            //             grab:{
+            //                 distance:400,
+            //                 line_linked:{
+            //                     opacity:1
+            //                 }    
+            //             },
+                        
+            //             bubble:{
+            //                 distance:400,
+            //                 size:40,
+            //                 duration:2,
+            //                 opacity:8,
+            //                 speed:3
+            //             },
 
-        interactivity:{
-            detectsOn: "canvas",
-            events: {
-                onClick: {
-                    enable: true,
-                    mode:'push'
-                },
-
-                onhover: {
-                enable: true,
-                mmode: 'repulsive'
-            }
-            }
-           
-        },
+            //             repulse:{
+            //                 distance:200,
+            //                 duration:0.4
+            //             },
+            //             push:{
+            //                 particles_nb:4
+            //             },
+            //             remove:{
+            //                 particles_nb:2
+            //             }
+            //         }
+            //     },
+    
           particles: {
 
-            line_linked: {
-            				shadow: {
-            					enable: true,
-            					color: "#3CA9D1",
-            					blur: 2
-            				}
-            			},
+           line_linked:{
+               enable:true,
+               distance:205,
+               color:"#1bd926",
+               opacity:0.2,
+               width:3
+           },
 
             number: {
               value: 80,
@@ -83,24 +108,24 @@ function Mainview() {
                 value_area: 1000,
               }
             },
+
+            shape: {
+                    type: "star",
+                    stroke: {
+                        width: 6,
+                        color: "#e8cf5b"
+                    }
+                }
+            },
             
             move: {
                 speed:20
             }
-            // shape: {
-            //         type: "circle",
-            //         stroke: {
-            //             width: 2,
-            //             color: "#000000"
-            //         }
-            //     }
-            }
+
+            
 
         }}/>
-        {/* <div className="partical">
        
-
-        </div> */}
         
         <div className="center-view">
             <div className="center-text" >
@@ -141,7 +166,7 @@ function Mainview() {
             </Route>
         </Router>
         
-        </>
+        </div>
 
 
        
