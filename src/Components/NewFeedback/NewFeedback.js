@@ -6,7 +6,6 @@ function NewFeedback(props){
     const twitter = ""
     const instagram = ""
     const github = ""
-    const image = "https://www.notsoporangi.com/upload/media/entries/2018-06/11/746-0-12fad64ea66aa5787fbfcce858e32cb7.jpg"
     
     const style = {
       backgroundImage: `url(${props.data.url})`, 

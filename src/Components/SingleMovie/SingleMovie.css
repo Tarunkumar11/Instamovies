@@ -181,11 +181,34 @@
     align-items: center;
     backdrop-filter: blur(10px);
 }
-.trailer video{
-    max-width: 90%;
-    height: 75%;
+
+.trailer .trailer-backward{
+    display: flex;
+    align-items: center;
+    margin-right: 2%;
+}
+.trailer .trailer-forward{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 1%;
+    cursor: pointer;
+}
+/* .trailer div {
+    width: 100%;
+    height: 100%;
+}
+.trailer div div{
+    width: 100%;
+    height: 100%;
+} */
+
+.trailer iframe{
+    width: 100%;
+    height: 100%;
     outline: none;
     border-radius: 0.5em;
+    margin-top: 3   %;
 }
 
 
