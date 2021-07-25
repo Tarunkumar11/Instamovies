@@ -6,11 +6,13 @@ import Cast from './Cast'
 import Recommendation from './Recommendation'
 import axios from 'axios'
 import Loader from '../Loader/Loader'
-
+import ReactPlayer from 'react-player'
 
 function SingleMovie(props) {
     
     const [movie, setMovies] = useState(null);
+    const [trailerFlag, setTrailerFlag]  = useState(false)
+
     const movieid = props.singlemoviedata.match.params.id
     useEffect((props)=> {
         const url   = `https://api.themoviedb.org/3/movie/${movieid}?api_key=01fa22077a62608ab466b3c017eba6a0&language=en-US`
@@ -19,7 +21,7 @@ function SingleMovie(props) {
             })
         }, [movieid])
     
-    const playVedio = ""
+    const playVedio = "#"
     let style = null
     let popularityPercentage = 30;
     
@@ -64,9 +66,19 @@ function SingleMovie(props) {
                             <ul>
                                 <li><a href={playVedio}><i className="far fa-bookmark"></i></a></li>
                                 <li><a href={playVedio}><i className="far fa-heart"></i></a></li>
-                                <li><a href={playVedio}><i className="fas fa-play"></i></a></li>
+                                <li><a href={playVedio} onClick={(e) => {setTrailerFlag(true)}} ><i className="fas fa-play"></i></a></li>
                             </ul>
                         </div>
+
+                        {trailerFlag && <div className="trailer">
+                            {/* <ReactPlayer url="https://youtu.be/luai0p0y2zE" controls
+    playbackRate = {2}
+    width = "75%"
+    height = "100%"/> */}
+                            <video src="https://www.youtube.com/watch?v=A4Snb7yu5cE" type="video/mp4"  controls='true' />
+                            
+                            <div className="closeicon"><i class="far fa-times-circle" onClick={(e) => {setTrailerFlag(false)}}></i></div>
+                        </div>}
 
                         <div className="overview">
                             <div className="movie-type over">   

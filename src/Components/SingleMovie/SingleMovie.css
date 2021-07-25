@@ -168,6 +168,34 @@
     font-size: 0.5em;
 }
 
+.trailer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+.trailer video{
+    max-width: 90%;
+    height: 75%;
+    outline: none;
+    border-radius: 0.5em;
+}
+
+
+.closeicon{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    max-width: 32px;
+}
 .movie-cast{
     display: flex;
     width: 100%;
