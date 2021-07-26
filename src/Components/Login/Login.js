@@ -30,7 +30,7 @@ function Login() {
                 errors.password = "Required"
             }
             else if(values.password.length < 8){
-                errors.password = "Password should be greater than  8 character"
+                errors.password = "Minimum 8 character"
             }
             return errors
         }
