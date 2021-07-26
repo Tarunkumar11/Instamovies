@@ -211,6 +211,13 @@ padding: 5% 10% 5% 10%;
     box-shadow: 2px 3px 6px;
     padding: 1em 2em 1em 2em;
 }
+.inputBox .errors {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding-top: 2%;
+}
 
 .forgot, .sign-up{
     margin-top: 9%;
