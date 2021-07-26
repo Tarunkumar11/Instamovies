@@ -27,8 +27,6 @@ function SingleMovie(props) {
         setTrailerFlag(true)
         const newurl = `https://api.themoviedb.org/3/movie/${movieid}/videos?api_key=01fa22077a62608ab466b3c017eba6a0&language=en-US`
         axios.get(newurl).then((response) => {
-            // const trailerUrl = "https://www.youtube.com/watch?v=" + response.data.results
-            console.log(response.data.results)
             setTrailers(response.data.results)
             })
             

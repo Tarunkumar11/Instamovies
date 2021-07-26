@@ -1,35 +1,36 @@
 import React from 'react'
 import './Login.css'
 import { useFormik } from 'formik'
-import {Link, useHistory } from "react-router-dom";
+import {Link} from "react-router-dom";
 import { useAuth } from '../../contexts/AuthContext';
-function Login() {
 
-    const {login} = useAuth()
+function Signup() {
+    
+    const {signup, currentUser} = useAuth()
+    console.log("this is current user", currentUser)
     function validateEmail(email) {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
-    }    
-    const lofd = ""
+    } 
+    let errors = {}
     const formik = useFormik({
         initialValues: {
             email:'',
-            password:''
+            password:'',
+            confirmPassword:''
+
         },  
         onSubmit:values => {
-
             try {
-                login(values.email, values.password)
-                useHistory.push('/')
+                signup(values.email, values.password)
+                console.log(currentUser)
             }
             catch {
-                this.errors.password  = "Failed to login!"
+                this.errors.confirmPassword  = "Failed to create an account!"
             }
-            
         },
 
         validate: values => {
-            let errors = {}
             if(!values.email){
                 errors.email = "Required"
             }
@@ -42,10 +43,24 @@ function Login() {
             else if(values.password.length < 8){
                 errors.password = "Minimum 8 character"
             }
+
+            if(!values.confirmPassword){
+                errors.confirmPassword = "Required"
+            }
+            else if(values.password.length < 8){
+                errors.confirmPassword = "Minimum 8 character"
+            }
+
+            if(values.password !== values.confirmPassword){
+                errors.confirmPassword = "Password does not match"
+            }
+
             return errors
         }
 
     })
+
+    
     return (
         <div className='login-container'>
             <div className="box">
@@ -60,7 +75,7 @@ function Login() {
                 <div className='container'>
                     <div className="form">
                         <h2>
-                            Login
+                            Signup
                         </h2>
                         <form onSubmit={formik.handleSubmit}>
                             <div className="inputBox">
@@ -71,12 +86,14 @@ function Login() {
                                 <input type="password" placeholder="Paasword" name="password" onChange={formik.handleChange} value={formik.values.password} onBlur={formik.handleBlur} />
                                 {formik.touched.password && formik.errors.password ? <div className="errors">{formik.errors.password}</div>  : null}
                             </div>
-
                             <div className="inputBox">
-                                <input type="submit" placeholder="Login" />
+                                <input type="password" placeholder="Confirm Paasword" name="confirmPassword" onChange={formik.handleChange} value={formik.values.confirmPassword} onBlur={formik.handleBlur} />
+                                {formik.touched.confirmPassword && formik.errors.confirmPassword ? <div className="errors">{formik.errors.confirmPassword}</div>  : null}
                             </div>
-                                <p className="forgot">forgot password ?<a href={lofd}>Click here</a></p>
-                                <Link to={{ pathname: "/signup/"}}><p className="sign-up">Don't have an account?&ampClick here</p></Link>
+                            <div className="inputBox">
+                                <input type="submit" placeholder="Signup" />
+                            </div>
+                            <Link to={{ pathname: "/login"}}><p className="sign-up">Already have an account?&ampClick here</p></Link>
                                 
                         </form>
                     </div>
@@ -86,4 +103,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Signup

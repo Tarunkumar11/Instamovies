@@ -5,12 +5,13 @@ import SearchResults from '../SearchResult/SearchResults';
 import Particles from 'react-particles-js';
 import { useFormik } from 'formik'
 import {Link} from "react-router-dom";
+import { useAuth } from '../../contexts/AuthContext';
 
 function Mainview() {
 
     const [searchMoviesList, setSearchMovies]  = useState(null);
     const [flag, setFlag] = useState(false)
-
+    const {currentUser} = useAuth()
     const formik = useFormik({
         initialValues:{
             search:""
@@ -24,7 +25,6 @@ function Mainview() {
     })
     
     function getsuggestion(value) {
-        console.log(value)
         if(value === "" || value == null){
             setSearchMovies(null)
         }
@@ -76,6 +76,7 @@ function Mainview() {
         <div className="center-view">
             <div className="center-text" >
                 <h2>
+                {currentUser && <span>Hey {currentUser.email}</span>}
                 <span>Welcome to Instamovies.</span>
                 Now you can search your favourite movie and explore.
                 </h2>
