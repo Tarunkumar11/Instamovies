@@ -17,9 +17,19 @@ function MovieCard(props) {
                     </div>
 
                     <ul className="sci">
-                        <li style={{"--i":1}}><i className="far fa-star">{ props.singleMovieData.vote_average}</i></li>
-                        <li style={{"--i":3}}>{ props.singleMovieData.release_date}</li>
-                        <li style={{"--i":2}}><i className="far fa-heart">{props.singleMovieData.vote_count}</i></li>
+                        <li style={{"--i":1}}>
+                            <i className="far fa-star"></i>
+                            <p>{ props.singleMovieData.vote_average}</p>
+                        </li>
+
+                        <li style={{"--i":3}}>
+                            <p>{ props.singleMovieData.release_date}</p>
+                        </li>
+                        
+                        <li style={{"--i":2}}>
+                            <i className="far fa-heart"></i>
+                            <p>{props.singleMovieData.vote_count}</p>
+                        </li>
                     </ul>
 
                     <div className="watch-list">

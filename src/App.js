@@ -9,8 +9,11 @@ import Footer from './Components/Footer/Footer';
 import Feedback from './Components/Feedback/Feedback';
 import SingleMovie from './Components/SingleMovie/SingleMovie';
 import Login from './Components/Login/Login';
+import Signup from './Components/Login/Signup';
 import WatchList from './Components/WatchList/WatchList'
 import axios from 'axios';
+
+import { AuthProvider } from './contexts/AuthContext';
 
 // const TreandingContext = React.createContext()
 
@@ -50,23 +53,27 @@ function App() {
   // const TreandingContext = React.createContext()
   
   return (
-    <div className="App"> 
-      
-      <Router >
-        <Navbar />
-        <Route exact path='/'>
-          <Mainview />
-          {  movies && <Trending data= {{title: "Trending", movies_data: movies.results }} />}
-          { scifi && <Trending data= {{title: "Sci-fi", movies_data: scifi }} />}
-          <TopBrand />
-          <Feedback />
-        </Route>
-        <Route exact path='/watchlist' render={(props) => <WatchList text="Hello, " {...props} />} />
-        <Route exact path='/movie/:id/:title' render={(props) => <SingleMovie singlemoviedata = {props} />}  />
-        <Route exact path='/login' component={Login} />
-      </Router>
-      <Footer />
-    </div>
+    <AuthProvider>
+      <div className="App"> 
+        
+        <Router >
+          <Navbar />
+          <Route exact path='/'>
+            <Mainview />
+            {  movies && <Trending data= {{title: "Trending", movies_data: movies.results }} />}
+            { scifi && <Trending data= {{title: "Sci-fi", movies_data: scifi }} />}
+            <TopBrand />
+            <Feedback />
+          </Route>
+          <Route exact path='/watchlist' render={(props) => <WatchList text="Hello, " {...props} />} />
+          <Route exact path='/movie/:id/:title' render={(props) => <SingleMovie singlemoviedata = {props} />}  />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/signup' component={Signup} />
+          
+        </Router>
+        <Footer />
+      </div>
+    </AuthProvider>
   );
 }
 
