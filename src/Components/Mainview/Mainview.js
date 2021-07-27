@@ -6,9 +6,32 @@ import Particles from 'react-particles-js';
 import { useFormik } from 'formik'
 import {Link} from "react-router-dom";
 import { useAuth } from '../../contexts/AuthContext';
-
+import {db} from '../../firebase'
 function Mainview() {
 
+    // const firestore = db.doc('watchlist/1')
+    // async function f1() {
+    //     let snapshot =  await firestore.get();
+    //     let data = {...snapshot.data()}
+    //     console.log(data)
+    //     return data
+    // }
+    // let uid = f1()
+    // console.log(uid)
+
+    // try{
+       
+    // }
+    // catch{
+    //     console.log("get an error")
+    // }
+    // console.log(auth)
+    // console.log(firestore)
+    // const querySnapshot = db.document('watchlist');
+    // console.log(querySnapshot)
+    // querySnapshot.forEach((doc) => {
+    //     console.log(`${doc.id} => ${doc.data()}`);
+    // });
     const [searchMoviesList, setSearchMovies]  = useState(null);
     const [flag, setFlag] = useState(false)
     const {currentUser} = useAuth()
