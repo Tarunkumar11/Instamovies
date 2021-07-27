@@ -44,6 +44,9 @@
     text-decoration: none;
     font-size: 1em;
 }
+.close-icon i{
+    padding-right: 5%;
+}
 
 .filter-container ul li  a select{
     width: 100%;
