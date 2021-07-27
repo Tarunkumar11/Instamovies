@@ -13,9 +13,9 @@ function Navbar() {
         <div className="Navbar-items">
             <NavbarList items={[{btn:'Home', link:''}, 
                                 {btn:'Watchlist', link: 'watchlist'}, 
-                                {btn:'Filter',link:"#"}, 
+                                {btn:'Filter',link:""}, 
                                 {btn:'Login',link: 'login'},
-                                {btn:'Logout',link: '#'}]} />
+                                {btn:'Logout',link: ''}]} />
         </div>
         <Filter />
         

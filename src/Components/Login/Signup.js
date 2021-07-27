@@ -93,7 +93,7 @@ function Signup() {
                             <div className="inputBox">
                                 <input type="submit" placeholder="Signup" />
                             </div>
-                            <Link to={{ pathname: "/login"}}><p className="sign-up">Already have an account?&ampClick here</p></Link>
+                            <Link to={{ pathname: "/login"}}><p className="sign-up">Already have an account? {" "} Click here</p></Link>
                                 
                         </form>
                     </div>
