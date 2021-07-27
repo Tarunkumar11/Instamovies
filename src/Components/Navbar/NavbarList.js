@@ -14,7 +14,7 @@ function NavbarList(props) {
         
           
     }
-    function handleLogout(){
+    async function handleLogout(){
         logout()
     }
     

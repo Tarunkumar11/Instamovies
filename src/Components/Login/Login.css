@@ -186,7 +186,11 @@ padding: 5% 10% 5% 10%;
     align-items: flex-start;
     flex-direction: column;
 }
-
+.form form a{
+    text-decoration: none;
+    margin-top: 0;
+    padding-top: 0
+}
 .form .inputBox input{
     width: 100%;
     background: rgba(255, 255, 255, 0.2);
@@ -210,6 +214,11 @@ padding: 5% 10% 5% 10%;
     font-weight: 700;
     box-shadow: 2px 3px 6px;
     padding: 1em 2em 1em 2em;
+    cursor: pointer;
+}
+
+.form .inputBox input[type='submit']:hover{
+    background: linear-gradient(45deg, rgb(5, 223, 96),white);
 }
 .inputBox .errors {
     display: flex;
@@ -221,6 +230,7 @@ padding: 5% 10% 5% 10%;
 
 .forgot, .sign-up{
     margin-top: 9%;
+    margin-bottom: 0;
     color: white;
 }
 
