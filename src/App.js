@@ -15,7 +15,7 @@ import axios from 'axios';
 import PrivateRounte from './Components/PrivateRoute/PrivateRounte';
 import UPrivateRounte from './Components/PrivateRoute/UPrivateRoute';
 import { AuthProvider } from './contexts/AuthContext';
-import app from './firebase'
+
 
 function App() {
 

@@ -2,7 +2,6 @@ import React from 'react'
 import './Filter.css'
 
 function Filter() {
-    const crossicon = ""
     function closeFilter(){
         const filter  =  document.getElementById("filterid")
         if(filter !== null) {

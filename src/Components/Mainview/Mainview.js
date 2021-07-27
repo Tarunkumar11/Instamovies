@@ -6,7 +6,7 @@ import Particles from 'react-particles-js';
 import { useFormik } from 'formik'
 import {Link} from "react-router-dom";
 import { useAuth } from '../../contexts/AuthContext';
-import {db} from '../../firebase'
+// import {db} from '../../firebase'
 function Mainview() {
 
     // const firestore = db.doc('watchlist/1')
