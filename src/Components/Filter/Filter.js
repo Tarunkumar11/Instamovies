@@ -2,7 +2,6 @@ import React from 'react'
 import './Filter.css'
 
 function Filter() {
-    const crossicon = ""
     function closeFilter(){
         const filter  =  document.getElementById("filterid")
         if(filter !== null) {
@@ -14,7 +13,7 @@ function Filter() {
     return (
         <div className="filter" id="filterid">
             <div className="close-icon">
-                <img src={crossicon} alt="cross" onClick={closeFilter} />
+                <i className="far fa-times-circle" onClick={closeFilter}></i>
             </div>
             <div className="filter-container">
                 <h2>Filters</h2>

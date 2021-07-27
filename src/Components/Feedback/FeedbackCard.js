@@ -19,7 +19,10 @@ function FeedbackCard(props) {
   if(props.data) {
     castName = props.data.name;
     overview = props.data.character;
-    const imagePath = "https://www.themoviedb.org/t/p/w300_and_h450_face" +props.data.profile_path 
+    let imagePath = ""
+    if(props.data.profile_path){
+        imagePath = "https://www.themoviedb.org/t/p/w300_and_h450_face" +props.data.profile_path
+    }
     style  = { 
       backgroundImage: `url(${imagePath})`, 
       backgroundPosition: 'center',

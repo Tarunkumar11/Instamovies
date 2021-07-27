@@ -6,8 +6,7 @@ import { useAuth } from '../../contexts/AuthContext';
 
 function Signup() {
     
-    const {signup, currentUser} = useAuth()
-    console.log("this is current user", currentUser)
+    const {signup} = useAuth()
     function validateEmail(email) {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
@@ -23,7 +22,6 @@ function Signup() {
         onSubmit:values => {
             try {
                 signup(values.email, values.password)
-                console.log(currentUser)
             }
             catch {
                 this.errors.confirmPassword  = "Failed to create an account!"
@@ -93,7 +91,7 @@ function Signup() {
                             <div className="inputBox">
                                 <input type="submit" placeholder="Signup" />
                             </div>
-                            <Link to={{ pathname: "/login"}}><p className="sign-up">Already have an account?&ampClick here</p></Link>
+                            <Link to={{ pathname: "/login"}}><p className="sign-up">Already have an account? {" "} Click here</p></Link>
                                 
                         </form>
                     </div>

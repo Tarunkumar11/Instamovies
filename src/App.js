@@ -12,18 +12,17 @@ import Login from './Components/Login/Login';
 import Signup from './Components/Login/Signup';
 import WatchList from './Components/WatchList/WatchList'
 import axios from 'axios';
-
+import PrivateRounte from './Components/PrivateRoute/PrivateRounte';
+import UPrivateRounte from './Components/PrivateRoute/UPrivateRoute';
 import { AuthProvider } from './contexts/AuthContext';
 
-// const TreandingContext = React.createContext()
 
 function App() {
 
   const url  = "https://api.themoviedb.org/3/trending/movie/day?api_key=01fa22077a62608ab466b3c017eba6a0"
   const [movies, setMovies] = useState(null);
   const [scifi, setsSifi] = useState(null)
-
-  // const genres =  [{"id":28,"name":"Action"},{"id":12,"name":"Adventure"},{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"},{"id":99,"name":"Documentary"},{"id":18,"name":"Drama"},{"id":10751,"name":"Family"},{"id":14,"name":"Fantasy"},{"id":36,"name":"History"},{"id":27,"name":"Horror"},{"id":10402,"name":"Music"},{"id":9648,"name":"Mystery"},{"id":10749,"name":"Romance"},{"id":878,"name":"Science Fiction"},{"id":10770,"name":"TV Movie"},{"id":53,"name":"Thriller"},{"id":10752,"name":"War"},{"id":37,"name":"Western"}]
+  
 
   useEffect(()=> {
                   axios.get(url).then(function (response)
@@ -42,16 +41,6 @@ function App() {
                   })
             }, [])
 
-  
-  
-//const topRate = {}
-
-//const newInterest = {}
-  
-
-
-  // const TreandingContext = React.createContext()
-  
   return (
     <AuthProvider>
       <div className="App"> 
@@ -65,11 +54,10 @@ function App() {
             <TopBrand />
             <Feedback />
           </Route>
-          <Route exact path='/watchlist' render={(props) => <WatchList text="Hello, " {...props} />} />
+          <PrivateRounte exact path='/watchlist' component={WatchList} render={(props) => <WatchList  {...props} />} />
           <Route exact path='/movie/:id/:title' render={(props) => <SingleMovie singlemoviedata = {props} />}  />
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/signup' component={Signup} />
-          
+          <UPrivateRounte exact path='/login' component={Login} />
+          <UPrivateRounte exact path='/signup' component={Signup} />
         </Router>
         <Footer />
       </div>

@@ -110,9 +110,11 @@ function SingleMovie(props) {
                             <div className="trailer-backward" onClick={backIndex} >
                                 <i className="fas fa-arrow-circle-left"></i>
                             </div>
-                            {
-                                <ReactPlayer url={"https://www.youtube.com/watch?v="+trailers[currIndex].key} width = "80%" height = "80%" controls />
-                            }
+                            
+                               {trailers.length !== 0 &&  <ReactPlayer url={"https://www.youtube.com/watch?v="+trailers[currIndex].key} width = "80%" height = "80%" controls />}
+                               {trailers.length === 0 && <h1>trailer is not available </h1>}
+
+                            
                             <div className="closeicon"><i className="far fa-times-circle" onClick={(e) => {setTrailerFlag(false);}}></i></div>
                             <div className="trailer-forward" onClick={nextindex}>
                                 <i className="fas fa-arrow-circle-right"></i>

@@ -6,6 +6,7 @@ import { useAuth } from '../../contexts/AuthContext';
 function Login() {
 
     const {login} = useAuth()
+    const history = useHistory()
     function validateEmail(email) {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
@@ -16,11 +17,10 @@ function Login() {
             email:'',
             password:''
         },  
-        onSubmit:values => {
+        onSubmit:async values => {
 
             try {
-                login(values.email, values.password)
-                useHistory.push('/')
+                await login(values.email, values.password).then(() => {history.push('/')})
             }
             catch {
                 this.errors.password  = "Failed to login!"
@@ -73,10 +73,10 @@ function Login() {
                             </div>
 
                             <div className="inputBox">
-                                <input type="submit" placeholder="Login" />
+                                <input type="submit" placeholder="Login"/>
                             </div>
                                 <p className="forgot">forgot password ?<a href={lofd}>Click here</a></p>
-                                <Link to={{ pathname: "/signup/"}}><p className="sign-up">Don't have an account?&ampClick here</p></Link>
+                                <Link to={{ pathname: "/signup/"}}><p className="sign-up">Don't have an account? {" "} Click here</p></Link>
                                 
                         </form>
                     </div>
