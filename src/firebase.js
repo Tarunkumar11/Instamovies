@@ -1,4 +1,7 @@
+
+
 import firebase from 'firebase/app'
+import "firebase/firestore";
 import 'firebase/auth'
 
 const app = firebase.initializeApp({
@@ -10,6 +13,7 @@ const app = firebase.initializeApp({
     messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
     appId:process.env.REACT_APP_FIREBASE_APP_ID
 })
-
-export const auth = app.auth();
+const auth = app.auth();
+const db = app.firestore()
+export {auth , db}
 export default app
