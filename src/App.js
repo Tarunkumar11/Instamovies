@@ -15,7 +15,7 @@ import axios from 'axios';
 import PrivateRounte from './Components/PrivateRoute/PrivateRounte';
 import UPrivateRounte from './Components/PrivateRoute/UPrivateRoute';
 import { AuthProvider } from './contexts/AuthContext';
-
+import NotFound from './Components/NotFound/NotFound';
 
 function App() {
 
@@ -58,7 +58,9 @@ function App() {
           <Route exact path='/movie/:id/:title' render={(props) => <SingleMovie singlemoviedata = {props} />}  />
           <UPrivateRounte exact path='/login' component={Login} />
           <UPrivateRounte exact path='/signup' component={Signup} />
+          <Route exact path="/404" component={NotFound} />
         </Router>
+        
         <Footer />
       </div>
     </AuthProvider>
