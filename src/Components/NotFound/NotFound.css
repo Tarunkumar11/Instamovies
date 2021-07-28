@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500');
+.newpartical {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(http://salehriaz.com/404Page/img/bg_purple.png) !important;
+}
+
+.newpartical canvas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 100vh;
+}
+.not-found{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+
+.btn-go-home{
+    position: relative;
+    z-index: 200;
+    margin: 15px auto;
+    width: 100px;
+    padding: 10px 15px;
+    border: 1px solid #FFCB39;
+    border-radius: 100px;
+    font-weight: 400;
+    display: block;
+    color: rgb(255, 254, 254);
+    text-align: center;
+    text-decoration: none;
+    letter-spacing : 2px;
+    font-size: 11px;
+    transition: all 0.3s ease-in;
+}
+
+.btn-go-home:hover{
+    background-color: #FFCB39;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0px 20px 20px rgba(0,0,0,0.1);
+}
+
+.central-body{
+    width: 100%;
+    padding: 17% 0% 10% 0%;
+    text-align: center;
+}
+
+.objects img{
+    z-index: 90;
+    pointer-events: none;
+}
+
+.rocket{
+    z-index: 95;
+    position: absolute;
+    transform: translateX(-50px);
+    top: 75%;
+    pointer-events: none;
+    animation: rocket-movement 50s linear infinite both running;
+}
+@keyframes rocket-movement { 100% {transform: translate(400px,-400px);}
+0% {transform: translate(-400px,400px);}
+
+}
+.earth{
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    z-index: 90;
+}
+
+.moon{
+    position: absolute;
+    top: 12%;
+    left: 25%;
+    transform: rotate(0deg);
+    transition: transform ease-in 1s;
+}
+
+.box_astronaut{
+    z-index: 110 !important;
+    position: absolute;
+    top: 30%;
+    right: 20%;
+    will-change: transform;
+    animation: move-astronaut 50s infinite linear both alternate;
+}
+
+.astronaut{
+    animation: rotate-astronaut 50s infinite linear both alternate;
+}
+
+@keyframes move-astronaut { 
+    100% { -webkit-transform: translate(-200px, -200px); 
+            transform:translate(-200px, -200px); 
+        }
+}
+@keyframes rotate-astronaut{
+    100% { -webkit-transform: rotate(-720deg); transform:rotate(-720deg); }
+}
+
+
+.image-404{
+    position: relative;
+    z-index: 100;
+    pointer-events: none;
+}
+
+@media only screen and (max-width: 600px){
+    
+    .box_astronaut{
+        top: 70%;
+    }
+    
+    .central-body{
+        padding-top: 25%;
+    }
+}
