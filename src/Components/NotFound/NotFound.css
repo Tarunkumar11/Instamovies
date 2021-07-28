@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     background: url(http://salehriaz.com/404Page/img/bg_purple.png) !important;
+    min-height: 37em;
 }
 
 .newpartical canvas {

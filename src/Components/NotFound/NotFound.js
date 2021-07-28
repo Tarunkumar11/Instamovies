@@ -1,6 +1,12 @@
 import React from 'react'
 import './NotFound.css'
 import Particles from 'react-particles-js';
+import f404 from '../../images/Error/404.svg'
+import earth from '../../images/Error/earth.svg'
+import moon from '../../images/Error/moon.svg'
+import rocket from '../../images/Error/rocket.svg'
+import astronaut from '../../images/Error/astronaut.svg'
+import {Link} from "react-router-dom";
 function NotFound() {
 
 
@@ -43,17 +49,17 @@ function NotFound() {
         }}/>
         <div className="not-found">
             <div class="central-body">
-                <img className="image-404" src="http://salehriaz.com/404Page/img/404.svg" width="300px" alt="404" />
-                <a href="http://salehriaz.com/404Page/404.html" className="btn-go-home">GO BACK HOME</a>
+                <img className="image-404" src={f404} width="300px" alt="404" />
+                <Link className="btn-go-home" to={{ pathname:'/'}}>GO BACK HOME </Link>
             </div>
             <div className="objects">
-                <img className="rocket" src="http://salehriaz.com/404Page/img/rocket.svg" width="40px" alt="rocket" />
+                <img className="rocket" src={rocket} width="40px" alt="rocket" />
                 <div className="earth-moon">
-                    <img className="earth" src="http://salehriaz.com/404Page/img/earth.svg" width="100px" alt="earth" />
-                    <img className="moon" src="http://salehriaz.com/404Page/img/moon.svg" width="80px" alt="moon" />
+                    <img className="earth" src={earth} width="100px" alt="earth" />
+                    <img className="moon" src={moon} width="80px" alt="moon" />
                 </div>
-                <div class="box_astronaut">
-                    <img class="astronaut" src="http://salehriaz.com/404Page/img/astronaut.svg" width="140px" alt="Astronaut" />
+                <div className="box_astronaut">
+                    <img class="astronaut" src={astronaut} width="140px" alt="Astronaut" />
                 </div>
             </div>
         </div>
