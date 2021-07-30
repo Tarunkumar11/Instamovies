@@ -49,8 +49,9 @@
 
 
 .trending-section {
-    background: rgb(0 0 0 / 85%);
+    background: rgb(27 26 26 / 98%);
     padding-bottom: 1em;
+    position: relative;
 }
 
 .trending-movies {
@@ -68,7 +69,7 @@
 }
 .movie-type h2{
     font-size: 21px;
-    font-family: cursive;
+    font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 0.2em;
     color: white;
 }

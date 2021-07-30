@@ -25,7 +25,7 @@
       padding: 1em 2em;
       overflow: hidden;
       transition: bottom 1s;
-      font-family:cursive;
+      font-family: 'Source Sans Pro', sans-serif;
       text-align: justify;
       width: -webkit-fill-available;
 
@@ -38,7 +38,7 @@
   }
   
   .card-content .card-heading h2{
-    font-family:cursive;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size:1.3em;
     margin:0;
     padding:0;

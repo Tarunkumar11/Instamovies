@@ -5,7 +5,7 @@
 }
 
 .center-text {
-    font-family: cursive !important;
+    font-family: 'Source Sans Pro', sans-serif !important;
     font-size: 200%;
     color: rgb(1, 165, 143);
     text-transform: capitalize;
