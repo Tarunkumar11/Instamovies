@@ -20,13 +20,9 @@
  box-shadow: 2px -1px 19px;
 }
 .content{
-  margin-left: 1em;
-      margin-left: 1em;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     flex-direction: column;
-    padding-left: 2%;
 }
 .user-name h1{
     margin: 0;
