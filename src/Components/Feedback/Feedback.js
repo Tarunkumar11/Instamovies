@@ -36,7 +36,7 @@ function Feedback() {
         })
     }
     
-
+    
     return (
         <div className='feedback-section'>
             <div className="movie-type">   

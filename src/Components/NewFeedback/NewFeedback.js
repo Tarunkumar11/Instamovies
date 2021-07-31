@@ -10,8 +10,14 @@ function NewFeedback(props){
     const style = {
       backgroundImage: `url(${props.data.url})`, 
     }
+
+    let exctraclass = "feedback-card "
+    if(props.data.id % 2 === 0){
+      exctraclass = "feedback-section ".concat("hide")
+    }
+    console.log(props)
     return(
-       <div className="feedback-card">
+       <div className={exctraclass}>
           <div className="profile-img" style={style}>
           </div>
         <div className="content">

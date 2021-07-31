@@ -2,7 +2,7 @@
     display: flex;
     position: absolute;
     height: 100vh;
-    width: 21%;
+    width: 29%;
     background: rgb(26,26,26);
     right: 0;
     color: white;
@@ -10,9 +10,9 @@
     align-items: baseline;
     justify-content: flex-start;
     flex-direction: column;
-    display: none;
     z-index: 99;
 }
+
 .filter .close-icon{
     display: flex;
     align-items: center;
@@ -37,18 +37,22 @@
     text-decoration: none;
     background: azure;
     margin: 4%;
+    color: black;
     border-radius: 0.3em;
+    text-align: justify;
 }
 
-.filter-container ul li  a {
+.filter-container ul li  option {
     text-decoration: none;
     font-size: 1em;
+    text-align: center;
 }
+
 .close-icon i{
     padding-right: 5%;
 }
 
-.filter-container ul li  a select{
+.filter-container ul li  select{
     width: 100%;
     text-align: center;
     outline: none;
@@ -56,6 +60,24 @@
     font-size: 1em;
     border: navajowhite;
     background: azure;
+    display: flex;
+    justify-content: center;
+}
+
+.genresoption{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1em;
+    text-align: left;
+}
+
+.genresoption h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    cursor: pointer;
 }
 
 @media screen and (max-width:473px) {
