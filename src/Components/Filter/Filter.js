@@ -1,15 +1,15 @@
-import React, {useState, createRef} from 'react'
+import React, {useState, createRef, useEffect} from 'react'
 import './Filter.css'
+import axios from 'axios'
 
 function Filter() {
 
 
-    const url = "https://api.themoviedb.org/3/movie/popular?api_key=01fa22077a62608ab466b3c017eba6a0&language=en-US&page=2"
-
-    const [movie, setMovie]   = useState(null)
-    const [selectedGeners, SetGeners] = useState(null)
-    const [selectedYears, SetYears] = useState(null)
-    const [selectedTypes, SetTypes] = useState(null)
+    
+    const [allMovie, setMovie]   = useState([])
+    const [selectedGeners, SetGeners] = useState([])
+    const [selectedYears, SetYears] = useState([])
+    const [selectedTypes, SetTypes] = useState([])
 
     const allGeners = {"genres":[{"id":28,"name":"Action"},{"id":12,"name":"Adventure"},{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"},{"id":99,"name":"Documentary"},{"id":18,"name":"Drama"},{"id":10751,"name":"Family"},{"id":14,"name":"Fantasy"},{"id":36,"name":"History"},{"id":27,"name":"Horror"},{"id":10402,"name":"Music"},{"id":9648,"name":"Mystery"},{"id":10749,"name":"Romance"},{"id":878,"name":"Science Fiction"},{"id":10770,"name":"TV Movie"},{"id":53,"name":"Thriller"},{"id":10752,"name":"War"},{"id":37,"name":"Western"}]}
     const listGeners =  allGeners.genres
@@ -42,7 +42,6 @@ function Filter() {
     }
 
     function handleOptionyear () {
-        console.log(optionYear)
         if(optionYear){
             if(optionYear.current.style.display==="none"){
                 optionYear.current.style.display = "block"
@@ -104,9 +103,64 @@ function Filter() {
         SetTypes(tempType)
     }
 
-    console.log(selectedGeners, selectedYears, selectedTypes)
+    function checker(arr, target){
+        for(let i = 0; i < target.length; i ++ ){
+            let flag = false
+            for(let j = 0; j < arr.length; j++) {   
+                if(arr[j] === Number(target[i])){
+                    flag   = true;
+                    break
+                }
+            }
+            if(flag === false) {
+                return false
+            }
+        }
+        return true
+    }
+    useEffect(() => {
+        for(let page=1; page <3; page++){
+            let url = "https://api.themoviedb.org/3/movie/popular?api_key=01fa22077a62608ab466b3c017eba6a0&language=en-US&page=".concat(page)
+            // eslint-disable-next-line no-loop-func
+            axios.get(url).then((response) => {
+                setMovie((premovie) => {
+                    let newmovie = {}
+                    premovie.forEach(movie => {
+                        
+                        if(selectedGeners.length === 0){
+                            newmovie[movie.id] = movie
+                        }
+        
+                        else if(movie.length && checker(movie.genre_ids, selectedGeners)){
+                            newmovie[movie.id] = movie
+                            console.log(movie.genre_ids)
+                        } 
+                    });
 
+                    response.data.results.forEach(movie => {
+                        if(selectedGeners.length === 0){
+                            newmovie[movie.id] = movie
+                        }
+                        else if(selectedGeners && movie && checker(movie.genre_ids, selectedGeners)){
+                            newmovie[movie.id] = movie
+                        } 
+                     });
 
+                    console.log("newmove", newmovie)
+                let final = [] 
+                for(const val in newmovie){
+                    final.push(newmovie[val])
+                }
+                console.log(final)
+                 return final
+                }) 
+                // setArray((prestate) => {console.log(prestate); return [...prestate, ...response.data.results]} )
+            })
+        }
+    }, [selectedGeners])
+    // console.log(allMovie)
+
+    
     return (
         <div className="filter" id="filterid">
             <div className="close-icon">
