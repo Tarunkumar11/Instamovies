@@ -15,7 +15,8 @@ function Navbar() {
                                 {btn:'Watchlist', link: 'watchlist'}, 
                                 {btn:'Filter',link:""}, 
                                 {btn:'Login',link: 'login'},
-                                {btn:'Logout',link: ''}]} />
+                                {btn:'Logout',link: ''}, 
+                                {btn:'Popular',link: 'popular'}]} />
         </div>
         <Filter />
         

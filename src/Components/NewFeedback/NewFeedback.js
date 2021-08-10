@@ -15,7 +15,7 @@ function NewFeedback(props){
     if(props.data.id % 2 === 0){
       exctraclass = "feedback-section ".concat("hide")
     }
-    console.log(props)
+    
     return(
        <div className={exctraclass}>
           <div className="profile-img" style={style}>
