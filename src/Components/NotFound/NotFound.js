@@ -48,7 +48,7 @@ function NotFound() {
 
         }}/>
         <div className="not-found">
-            <div class="central-body">
+            <div className="central-body">
                 <img className="image-404" src={f404} width="300px" alt="404" />
                 <Link className="btn-go-home" to={{ pathname:'/'}}>GO BACK HOME </Link>
             </div>
@@ -59,7 +59,7 @@ function NotFound() {
                     <img className="moon" src={moon} width="80px" alt="moon" />
                 </div>
                 <div className="box_astronaut">
-                    <img class="astronaut" src={astronaut} width="140px" alt="Astronaut" />
+                    <img className="astronaut" src={astronaut} width="140px" alt="Astronaut" />
                 </div>
             </div>
         </div>

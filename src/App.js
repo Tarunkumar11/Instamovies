@@ -16,6 +16,7 @@ import PrivateRounte from './Components/PrivateRoute/PrivateRounte';
 import UPrivateRounte from './Components/PrivateRoute/UPrivateRoute';
 import { AuthProvider } from './contexts/AuthContext';
 import NotFound from './Components/NotFound/NotFound';
+import FindMovie from './Components/FindMovie/FindMovie';
 
 function App() {
 
@@ -56,6 +57,7 @@ function App() {
           </Route>
           <PrivateRounte exact path='/watchlist' component={WatchList} render={(props) => <WatchList  {...props} />} />
           <Route exact path='/movie/:id/:title' render={(props) => <SingleMovie singlemoviedata = {props} />}  />
+          <Route exact path="/popular" render={(props) => <FindMovie {...props} />}  />
           <UPrivateRounte exact path='/login' component={Login} />
           <UPrivateRounte exact path='/signup' component={Signup} />
           <Route exact path="/404" component={NotFound} />

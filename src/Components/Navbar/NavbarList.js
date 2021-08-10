@@ -21,7 +21,9 @@ function NavbarList(props) {
     return (
         <nav>
             <Link to = {{pathname: `/${navItem[0].link}`}} key={navItem[0].btn} ><li>{navItem[0].btn}</li> </Link>
-            <Link to = {{pathname: `/${navItem[2].link}`}} key={navItem[2].btn} onClick={filterHandle}><li>{navItem[2].btn}</li> </Link> 
+            <Link to = {{pathname: `/${navItem[5].link}`}} key={navItem[5].btn}><li>{navItem[5].btn}</li> </Link> 
+            {/* <Link to = {{pathname: `/${navItem[2].link}`}} key={navItem[2].btn} onClick={filterHandle}><li>{navItem[2].btn}</li> </Link>  */}
+            
             {
                 currentUser&& <>
                 <Link to = {{pathname: `/${navItem[1].link}`}} key={navItem[1].btn}><li>{navItem[1].btn}</li> </Link> 
