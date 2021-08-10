@@ -1,12 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Login.css'
 import { useFormik } from 'formik'
-import {Link} from "react-router-dom";
+import {Link, useHistory } from "react-router-dom";
 import { useAuth } from '../../contexts/AuthContext';
 
 function Signup() {
     
     const {signup} = useAuth()
+    const [autherror, setAuthError] = useState(null)
+    const history = useHistory()
     function validateEmail(email) {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
@@ -19,9 +21,21 @@ function Signup() {
             confirmPassword:''
 
         },  
-        onSubmit:values => {
+        onSubmit: async values => {
             try {
-                signup(values.email, values.password)
+                signup(values.email, values.password).then(() => {history.push('/')}).catch((error) => {
+                    if(error.code === "auth/user-not-found"){
+                        console.log("trererere")
+                        setAuthError("User not found")
+                    }
+                    else if(error.code ===  "auth/wrong-password"){
+                        setAuthError("User/password did not match")
+                    }
+                    else{
+                        setAuthError(error.message);
+                    }
+                     console.log(error)})
+
             }
             catch {
                 this.errors.confirmPassword  = "Failed to create an account!"
@@ -75,6 +89,7 @@ function Signup() {
                         <h2>
                             Signup
                         </h2>
+                        {autherror ? <div className="inputBox"><div className="errors">{autherror}</div></div> : null}
                         <form onSubmit={formik.handleSubmit}>
                             <div className="inputBox">
                                 <input type="email" placeholder="Email Id" name="email" onChange={formik.handleChange} value={formik.values.email} onBlur={formik.handleBlur}/>
