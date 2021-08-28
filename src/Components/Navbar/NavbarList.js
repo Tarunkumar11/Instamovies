@@ -6,14 +6,14 @@ function NavbarList(props) {
 
     const {logout, currentUser} = useAuth()
     const navItem = props.items;
-    function filterHandle(e){
-        const filter  =  document.getElementById("filterid")
-        if(filter !== null) {
-            filter.style.display = "inline"
-        }
+    // function filterHandle(e){
+    //     const filter  =  document.getElementById("filterid")
+    //     if(filter !== null) {
+    //         filter.style.display = "inline"
+    //     }
         
           
-    }
+    // }
     async function handleLogout(){
         logout()
     }

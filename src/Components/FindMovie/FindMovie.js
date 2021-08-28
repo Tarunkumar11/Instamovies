@@ -34,7 +34,6 @@ function FindMovie(props) {
                         <li value='1'onClick={()=> {setPage(1)}}>1</li>
                         <li value='2'onClick={()=> {setPage(2)}}>2</li>
                         <li value="3"onClick={()=> {setPage(3)}}>3</li>
-                        <li value="4"onClick={()=> {setPage(4)}}>4 </li>
                         <li>...</li>
                         <li value="4"onClick={()=> {setPage(500)}}>500</li>
                         <li onClick={() => {setPage((page) => {return page+1 })}}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" className="w-4 h-4 text-gray-7 dark:text-gray-7"><path fillRule="evenodd" d="M7.913 19.071l7.057-7.078-7.057-7.064a1 1 0 011.414-1.414l7.764 7.77a1 1 0 010 1.415l-7.764 7.785a1 1 0 01-1.414-1.414z" clipRule="evenodd"></path></svg></li>  

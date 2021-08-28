@@ -17,7 +17,7 @@ import UPrivateRounte from './Components/PrivateRoute/UPrivateRoute';
 import { AuthProvider } from './contexts/AuthContext';
 import NotFound from './Components/NotFound/NotFound';
 import FindMovie from './Components/FindMovie/FindMovie';
-
+import Profile from './Components/Profile/Profile';
 function App() {
 
   const url  = "https://api.themoviedb.org/3/trending/movie/day?api_key=01fa22077a62608ab466b3c017eba6a0"
@@ -55,6 +55,7 @@ function App() {
             <TopBrand />
             <Feedback />
           </Route>
+          <PrivateRounte exact path="/user" component={Profile} />
           <PrivateRounte exact path='/watchlist' component={WatchList} render={(props) => <WatchList  {...props} />} />
           <Route exact path='/movie/:id/:title' render={(props) => <SingleMovie singlemoviedata = {props} />}  />
           <Route exact path="/popular" render={(props) => <FindMovie {...props} />}  />
