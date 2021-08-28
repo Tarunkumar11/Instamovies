@@ -12,9 +12,9 @@ function NewFeedback(props){
     }
 
     let exctraclass = "feedback-card "
-    if(props.data.id % 2 === 0){
-      exctraclass = "feedback-section ".concat("hide")
-    }
+    // if(props.data.id % 2 === 0){
+    //   exctraclass = "feedback-section ".concat("hide")
+    // }
     
     return(
        <div className={exctraclass}>

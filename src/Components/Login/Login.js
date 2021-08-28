@@ -23,7 +23,6 @@ function Login() {
             try {
                 await login(values.email, values.password).then(() => {history.push('/')}).catch((error) => {
                     if(error.code === "auth/user-not-found"){
-                        console.log("trererere")
                         setAuthError("User not found")
                     }
                     else if(error.code ===  "auth/wrong-password"){
@@ -31,8 +30,7 @@ function Login() {
                     }
                     else{
                         setAuthError(error.message);
-                    }
-                     console.log(error)})
+                    }})
             }
             catch {
                 this.errors.password  = "Failed to login!"

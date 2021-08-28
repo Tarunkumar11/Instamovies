@@ -1,14 +1,15 @@
-import React, {useState} from 'react'
+import React, {useState } from 'react'
 import './Login.css'
 import { useFormik } from 'formik'
-import {Link, useHistory } from "react-router-dom";
+import {Link } from "react-router-dom";
 import { useAuth } from '../../contexts/AuthContext';
+import {db} from '../../firebase'
 
 function Signup() {
     
     const {signup} = useAuth()
     const [autherror, setAuthError] = useState(null)
-    const history = useHistory()
+    // const history = useHistory()
     function validateEmail(email) {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
@@ -18,23 +19,31 @@ function Signup() {
         initialValues: {
             email:'',
             password:'',
-            confirmPassword:''
+            confirmPassword:'',
+            country:'',
+            mobileNo:''
 
         },  
         onSubmit: async values => {
             try {
-                signup(values.email, values.password).then(() => {history.push('/')}).catch((error) => {
-                    if(error.code === "auth/user-not-found"){
-                        console.log("trererere")
-                        setAuthError("User not found")
-                    }
-                    else if(error.code ===  "auth/wrong-password"){
-                        setAuthError("User/password did not match")
-                    }
-                    else{
-                        setAuthError(error.message);
-                    }
-                     console.log(error)})
+                signup(values.email, values.password).then((user) => {
+                    console.log(user.user.uid, values)
+                    db.collection('users').doc(user.user.uid).set({
+                        firstName:values.firstName,
+                        lastName:values.lastName,
+                        country:values.country,
+                        mobileNo:values.mobileNo,
+                        email:values.email
+                    }).then(() => {
+                        console.log("Document successfully written!");
+                    })
+                    .catch((error) => {
+                        console.error("Error writing document: ", error);
+                    });
+                    // history.push('/')
+                }).catch((error) => {
+                    setAuthError(error.message);
+                })
 
             }
             catch {
@@ -72,6 +81,26 @@ function Signup() {
 
     })
 
+
+    // useEffect(() => {
+    //     db.collection('users').get().then(querySnapshot => {
+    //     const documents = querySnapshot.docs.map(doc => doc.data())
+    //     // const result = documents.filter(word => word.isDelete === false);
+    //     db.collection('users').doc("dfsdsdfsdfhasdlkfjhasdjkfhasdjkfhjklasdhk").set({
+    //         firstName:"test",
+    //         lastName:"fsdfsd",
+    //         country:"inia",
+    //         mobileNo:"sdfasdfsd",
+    //         email:"tarun@gmial.com"
+    //     }).then(() => {
+    //         console.log("Document successfully written!");
+    //     })
+    //     .catch((error) => {
+    //         console.error("Error writing document: ", error);
+    //     });
+    //     })
+    // }, [])
+    
     
     return (
         <div className='login-container'>
@@ -102,6 +131,12 @@ function Signup() {
                             <div className="inputBox">
                                 <input type="password" placeholder="Confirm Paasword" name="confirmPassword" onChange={formik.handleChange} value={formik.values.confirmPassword} onBlur={formik.handleBlur} />
                                 {formik.touched.confirmPassword && formik.errors.confirmPassword ? <div className="errors">{formik.errors.confirmPassword}</div>  : null}
+                            </div>
+                            <div className="inputBox">
+                                <input type="text" placeholder="Country" name="country" onChange={formik.handleChange} value={formik.values.country} onBlur={formik.handleBlur} />
+                            </div>
+                            <div className="inputBox">
+                                <input type="text" placeholder="mobile no" name="mobileNo" onChange={formik.handleChange} value={formik.values.mobileNo} onBlur={formik.handleBlur} />
                             </div>
                             <div className="inputBox">
                                 <input type="submit" placeholder="Signup" />
