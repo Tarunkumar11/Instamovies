@@ -25,13 +25,14 @@
     width: 40%;
 }
 
-.watch-list{
+.watch-list-cls{
     display: flex;
     align-items: center;
     justify-content: space-around;
     background: #212121;
     flex-wrap: wrap;
 }
+
 @media screen and (max-width:570px) {
 
 }

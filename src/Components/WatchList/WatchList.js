@@ -40,7 +40,7 @@ export const WatchList = () => {
     }
     else{
         return(
-            watchlist.length && <div className ="watch-list">
+            watchlist.length && <div className ="watch-list-cls">
                 <div className="movie-type">   
                     <h2>WatchList</h2>
                 </div>
