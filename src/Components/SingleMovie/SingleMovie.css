@@ -129,13 +129,15 @@
     border-radius: 50%;
 }
 
-.for-user ul li a{
+.for-user ul li a, .for-user ul li i{
     text-decoration: none;
     display: flex;
     align-items: center;
     flex-direction: column;
     height: 50px;
     justify-content: center;
+    color: blue;
+    cursor: pointer;
 }
 
 .movie-popularity ::after {
