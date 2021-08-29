@@ -28,7 +28,7 @@ export const WatchList = () => {
             
         })
 
-    },[])
+    },[currentUser?.uid])
 
     if(!watchlist.length) {
         return (
