@@ -13,8 +13,7 @@ function ForgotPassword() {
     const formik = useFormik({
 
         initialValues:{
-            password:'',
-            confirmPassword:'',
+            email:'',
         },  
         
         onSubmit:values => { 
@@ -44,7 +43,7 @@ function ForgotPassword() {
                         </h2>
 
                         {
-                            message ? <div className="errors">{message}</div>:null
+                            message ? <div className="errors" style={{color: "#fff"}}>{message}</div>:null
                         }
 
                         <form onSubmit={formik.handleSubmit}>
