@@ -12,7 +12,6 @@ function Login() {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     }    
-    const lofd = ""
     const formik = useFormik({
         initialValues: {
             email:'',
@@ -88,7 +87,8 @@ function Login() {
                             <div className="inputBox">
                                 <input type="submit" placeholder="Login"/>
                             </div>
-                                <p className="forgot">forgot password ?<a href={lofd}>Click here</a></p>
+                                <Link to={{ pathname: "/forgot-password"}}><p className="sign-up">forgot password ? {" "} Click here</p></Link>
+                                {/* <p className="forgot">forgot password ?<a href={lofd}>Click here</a></p> */}
                                 <Link to={{ pathname: "/signup/"}}><p className="sign-up">Don't have an account? {" "} Click here</p></Link>
                                 
                         </form>
