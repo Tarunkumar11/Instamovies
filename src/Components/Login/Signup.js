@@ -27,7 +27,6 @@ function Signup() {
         onSubmit: async values => {
             try {
                 signup(values.email, values.password).then((user) => {
-                    console.log(user.user.uid, values)
                     db.collection('users').doc(user.user.uid).set({
                         firstName:values.firstName,
                         lastName:values.lastName,

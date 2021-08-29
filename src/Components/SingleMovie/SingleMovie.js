@@ -7,9 +7,11 @@ import Recommendation from './Recommendation'
 import axios from 'axios'
 import Loader from '../Loader/Loader'
 import ReactPlayer from 'react-player'
+import {db} from '../../firebase'
+import { useAuth } from '../../contexts/AuthContext';
 
 function SingleMovie(props) {
-    
+    const {currentUser} = useAuth()
     const [movie, setMovies] = useState(null);
     const [trailerFlag, setTrailerFlag]  = useState(false)
     const [trailers, setTrailers] = useState(null)
@@ -57,7 +59,20 @@ function SingleMovie(props) {
         })
     }
 
+    async function addwatchlist(){
+        
+        db.collection('watchlist').doc(currentUser.uid).get().then(data => {
+            let newarr = data.data()?.movieId||{}
+            newarr[movieid] = movie
+            db.collection("watchlist").doc(currentUser.uid).set({
+                movies:newarr,
+                userId:currentUser.uid
+            }, {merge:true}).then((response) => {console.log(response)}).catch((error)=>{console.log(error)})
 
+        })
+
+        
+    }
     const playVedio = "#"
     let style = null
     let popularityPercentage = 30;
@@ -100,7 +115,7 @@ function SingleMovie(props) {
                             </div>
 
                             <ul>
-                                <li><a href={playVedio}><i className="far fa-bookmark"></i></a></li>
+                                <li onClick={addwatchlist}><i className="far fa-bookmark"></i></li>
                                 <li><a href={playVedio}><i className="far fa-heart"></i></a></li>
                                 <li><a href={playVedio} onClick={setMovieTrailer} ><i className="fas fa-play"></i></a></li>
                             </ul>
