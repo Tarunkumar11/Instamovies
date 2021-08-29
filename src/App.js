@@ -18,6 +18,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import NotFound from './Components/NotFound/NotFound';
 import FindMovie from './Components/FindMovie/FindMovie';
 import Profile from './Components/Profile/Profile';
+import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
 function App() {
 
   const url  = "https://api.themoviedb.org/3/trending/movie/day?api_key=01fa22077a62608ab466b3c017eba6a0"
@@ -61,6 +62,7 @@ function App() {
           <Route exact path="/popular" render={(props) => <FindMovie {...props} />}  />
           <UPrivateRounte exact path='/login' component={Login} />
           <UPrivateRounte exact path='/signup' component={Signup} />
+          <UPrivateRounte exact path='/forgot-password' component={ForgotPassword} />
           <Route exact path="/404" component={NotFound} />
         </Router>
         

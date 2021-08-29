@@ -88,7 +88,8 @@ function Login() {
                             <div className="inputBox">
                                 <input type="submit" placeholder="Login"/>
                             </div>
-                                <p className="forgot">forgot password ?<a href={lofd}>Click here</a></p>
+                                <Link to={{ pathname: "/forgot-password"}}><p className="sign-up">forgot password ? {" "} Click here</p></Link>
+                                {/* <p className="forgot">forgot password ?<a href={lofd}>Click here</a></p> */}
                                 <Link to={{ pathname: "/signup/"}}><p className="sign-up">Don't have an account? {" "} Click here</p></Link>
                                 
                         </form>
