@@ -35,6 +35,10 @@
     
 }
 
+.bookmark-play-icon{
+    border-radius: 50%;
+}
+
 .content-box{
     width: 100%;
 }
@@ -127,6 +131,10 @@
     height: 50px;
     text-align: center;
     border-radius: 50%;
+    border: 5px solid rgba(182, 182, 182, 0);
+}
+.for-user ul li:hover{
+    border: 5px solid rgb(236, 150, 37);
 }
 
 .for-user ul li a, .for-user ul li i{

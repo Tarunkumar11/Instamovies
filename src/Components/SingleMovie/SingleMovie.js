@@ -9,13 +9,14 @@ import Loader from '../Loader/Loader'
 import ReactPlayer from 'react-player'
 import {db} from '../../firebase'
 import { useAuth } from '../../contexts/AuthContext';
+import { useHistory } from "react-router-dom";
 
 function SingleMovie(props) {
     const {currentUser} = useAuth()
     const [movie, setMovies] = useState(null);
     const [trailerFlag, setTrailerFlag]  = useState(false)
     const [trailers, setTrailers] = useState(null)
-    
+    let history = useHistory();
     const movieid = props.singlemoviedata.match.params.id
     useEffect((props)=> {
         const url   = `https://api.themoviedb.org/3/movie/${movieid}?api_key=01fa22077a62608ab466b3c017eba6a0&language=en-US`
@@ -60,7 +61,10 @@ function SingleMovie(props) {
     }
 
     async function addwatchlist(){
-        
+        if(!currentUser){
+            history.push("/login");
+            return
+        }
         db.collection('watchlist').doc(currentUser.uid).get().then(data => {
             let newarr = data.data()?.movieId||{}
             newarr[movieid] = movie
@@ -115,9 +119,9 @@ function SingleMovie(props) {
                             </div>
 
                             <ul>
-                                <li onClick={addwatchlist}><i className="far fa-bookmark"></i></li>
-                                <li><a href={playVedio}><i className="far fa-heart"></i></a></li>
-                                <li><a href={playVedio} onClick={setMovieTrailer} ><i className="fas fa-play"></i></a></li>
+                                <li className="bookmark-play-icon" onClick={addwatchlist}><i className="far fa-bookmark"></i></li>
+                                <li className="bookmark-play-icon" ><a href={playVedio}><i className="far fa-heart"></i></a></li>
+                                <li className="bookmark-play-icon" ><a href={playVedio} onClick={setMovieTrailer} ><i className="fas fa-play"></i></a></li>
                             </ul>
                         </div>
 

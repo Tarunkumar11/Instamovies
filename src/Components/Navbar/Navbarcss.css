@@ -20,16 +20,21 @@
     text-align: center;
     background: #1d1c1c;
     padding: 0.5em;
+    cursor: pointer;
 }
 .heading-text h2{
+    font-family: 'Source Sans Pro', sans-serif !important;
     font-weight: bolder;
     font-size: 1.5em;
-    font-family: 'Source Sans Pro', sans-serif !important;
     color: white;
     margin: 0;
     padding: 0
 }
 
+.heading-text h2 a{
+    color: white;
+    text-decoration: none;
+}
 .Navbar-items {
     width: 30%;
 }

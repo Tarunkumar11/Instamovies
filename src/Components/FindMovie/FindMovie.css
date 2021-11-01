@@ -1,19 +1,24 @@
+.movie-type{
+    width: 100%;
+    padding-top: 1%;
+    padding-left: 2%;
+}
+
 .searched-movie{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     background: #212121;
-    /* padding: 2%; */
     margin: 0;
 }
-.searched-movie h2{
 
+.searched-movie h2{
     text-align: center;
 }
 .searched-result{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -24,12 +29,14 @@
     align-self: flex-end;
     color: white;
     width: 100%;
+    width: 50%;
+    margin-bottom: 1em;
 }
 .next-page ul{
     display: flex;
     text-decoration: none;
-    justify-content: space-evenly;
-    width: 80%;
+    justify-content: flex-end;
+    width: 100%;
     list-style: none;
 }
 
@@ -39,9 +46,7 @@
     box-shadow: 2px 1px 2px #b7b2b2;
     border-radius: 0.3em;
     cursor: pointer;
-    /* height: 1em;
-    width: 1.5em; */
-
+    margin-right: 1em;
 }
 
 .second-part{
@@ -49,4 +54,15 @@
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.pre-arrow-pagination{
+    padding: 0.4em;
+    padding-right: 10px;
+    height: 20px;
+    width: 10px;
+    text-align: center;
+}
+.next-page ul li svg{
+    padding-top: 2px;
 }

@@ -7,7 +7,7 @@ function MovieCard(props) {
     
     return (
         <div className="container">
-            <div className="movie-card">
+            <div className="movie-card" style={props.boxshadow?props.boxshadow:{}}>
                 <div className="img-box">
                     <img src={ prefix + props.singleMovieData.poster_path} alt="cardImage" />
                 </div>
