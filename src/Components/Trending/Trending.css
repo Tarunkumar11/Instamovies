@@ -1,14 +1,16 @@
 .movie-card {
-    align-items: center;
-    flex-wrap: wrap;
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(50,350px);
-    grid-gap: 20px;
-    overflow-x: scroll;
-    scrollbar-width: thin;
-    scrollbar-color: #90A4AE;
-    margin-bottom: 2em;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  display: flex;
+  grid-template-columns: 350px auto;
+  grid-gap: 20px;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #90A4AE;
+  margin-bottom: 2em;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .movie-card::-webkit-scrollbar {
