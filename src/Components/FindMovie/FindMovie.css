@@ -66,3 +66,17 @@
 .next-page ul li svg{
     padding-top: 2px;
 }
+
+@media screen  and (max-width:425px) {
+    .next-page{
+        width: 100%;
+    }
+    .next-page ul {
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .movie-type{
+        justify-content: center;   
+    }
+}
