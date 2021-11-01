@@ -79,28 +79,7 @@ function Signup() {
         }
 
     })
-
-
-    // useEffect(() => {
-    //     db.collection('users').get().then(querySnapshot => {
-    //     const documents = querySnapshot.docs.map(doc => doc.data())
-    //     // const result = documents.filter(word => word.isDelete === false);
-    //     db.collection('users').doc("dfsdsdfsdfhasdlkfjhasdjkfhasdjkfhjklasdhk").set({
-    //         firstName:"test",
-    //         lastName:"fsdfsd",
-    //         country:"inia",
-    //         mobileNo:"sdfasdfsd",
-    //         email:"tarun@gmial.com"
-    //     }).then(() => {
-    //         console.log("Document successfully written!");
-    //     })
-    //     .catch((error) => {
-    //         console.error("Error writing document: ", error);
-    //     });
-    //     })
-    // }, [])
-    
-    
+      
     return (
         <div className='login-container'>
             <div className="box">
