@@ -6,7 +6,7 @@
     align-items: center;
     flex-wrap: wrap;
     flex-direction: row;
-    background: black;
+    background: #1F1E1E;
     
 }
 
@@ -20,8 +20,8 @@
 
 .search-result{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    align-items: flex-start;
     flex-wrap: wrap;
 }
 

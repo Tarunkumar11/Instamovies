@@ -35,83 +35,76 @@ function Mainview() {
     }
     
     return (
-        <>
-        <Particles  id = "partical" className="partical"  params={{
-          particles: {
-
-           line_linked:{
-               enable:true,
-               distance:205,
-               color:"#1bd926",
-               opacity:0.2,
-               width:3
-           },
-
-            number: {
-              value: 80,
-              density: {
-                enable: true,
-                value_area: 1000,
-              }
-            },
-
-            shape: {
-                    type: "star",
-                    stroke: {
-                        width: 6,
-                        color: "#e8cf5b"
+        <div className="search-mainview">
+            <div className="search-bar-section">
+            <Particles  id = "partical" className="partical"  params={{
+                particles: {
+            
+                 line_linked:{
+                     enable:true,
+                     distance:205,
+                     color:"#1bd926",
+                     opacity:0.2,
+                     width:3
+                 },
+            
+                  number: {
+                    value: 80,
+                    density: {
+                      enable: true,
+                      value_area: 1000,
                     }
-                }
-            },
+                  },
             
-            move: {
-                speed:20
-            }
-
+                  shape: {
+                          type: "star",
+                          stroke: {
+                              width: 6,
+                              color: "#e8cf5b"
+                          }
+                      }
+                  },
+                  
+                  move: {
+                      speed:20
+                  }
             
-
-        }}/>
-        <div className="search-bar-section">
-        <div className="center-view">
-            <div className="center-text" >
-                <h2>
-                {currentUser && <span>Hey {currentUser.email}</span>}
-                <span>Welcome to Instamovies.</span>
-                Now you can search your favourite movie and explore.
-                </h2>
-            </div>
+                  
             
-            <div className='search-suggestion'>
-                <form className="search-bar" onSubmit={formik.handleSubmit}>
-                    <input type="text" id="search-bar" placeholder="Search your favourite movies" name="search" onChange={(e) => {formik.handleChange(e); 
-                        getsuggestion(e.target.value) }} value={formik.values.search} />
-                    <input className="search-btn" type="submit" placeholder="Search" name='search-btn' />
-                </form>
-                { flag===false && searchMoviesList &&
-                    <div className="suggestion">
-                        <ul>
-                            {
-                            
-                                flag===false && searchMoviesList && searchMoviesList.results.splice(0,5).map((movie) => {return <Link to={{ pathname: `/movie/${movie.id}/${movie.title.split(" ").join("-")}`}}
-                                            key = {movie.id} ><li>{movie.title}</li></Link>
-                                })
-
-                            }
-                        </ul>
+              }}/>
+                <div className="center-view">
+                    <div className="center-text" >
+                        <h2>
+                        {currentUser && <span>Hey {currentUser.email}</span>}
+                        <span>Welcome to Instamovies.</span>
+                        Now you can search your favourite movie and explore.
+                        </h2>
                     </div>
-                }
+                    
+                    <div className='search-suggestion'>
+                        <form className="search-bar" onSubmit={formik.handleSubmit}>
+                            <input type="text" id="search-bar" placeholder="Search your favourite movies" name="search" onChange={(e) => {formik.handleChange(e); 
+                                getsuggestion(e.target.value) }} value={formik.values.search} />
+                            <input className="search-btn" type="submit" placeholder="Search" name='search-btn' />
+                        </form>
+                        { flag===false && searchMoviesList &&
+                            <div className="suggestion">
+                                <ul>
+                                    {
+                                    
+                                        flag===false && searchMoviesList && searchMoviesList.results.splice(0,5).map((movie) => {return <Link to={{ pathname: `/movie/${movie.id}/${movie.title.split(" ").join("-")}`}}
+                                                    key = {movie.id} ><li>{movie.title}</li></Link>
+                                        })
+
+                                    }
+                                </ul>
+                            </div>
+                        }
+                    </div>
+                </div>
             </div>
-            
-            
-
+            {  flag && searchMoviesList && <SearchResults movies_data={searchMoviesList} /> }
         </div>
-        
-        </div>
-        {  flag && searchMoviesList && <SearchResults movies_data={searchMoviesList} /> }
-        </>
-
-
-       
     )
 }
 
